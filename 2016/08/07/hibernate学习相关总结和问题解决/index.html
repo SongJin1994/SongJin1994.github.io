@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hibernate学习相关总结和问题解决 | 南北 | Baron&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="框架,Java,ORM">
+  <meta name="description" content="hibernate学习相关总结和问题解决hibernate不自动建表问题配置了&amp;lt;property name=&amp;quot;hibernate.hbm2ddl.auto&amp;quot;&amp;gt;update&amp;lt;/property&amp;gt;之后，在数据库中不存在相应的数据表的时候，仍然无法自动创建表，可以查看是否是数据库方言的问题，
+出错原因：原代码 &amp;lt;property name=&amp;quot;h">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hibernate学习相关总结和问题解决">
+<meta property="og:url" content="https://songjin1994.github.io/2016/08/07/hibernate学习相关总结和问题解决/index.html">
+<meta property="og:site_name" content="南北">
+<meta property="og:description" content="hibernate学习相关总结和问题解决hibernate不自动建表问题配置了&amp;lt;property name=&amp;quot;hibernate.hbm2ddl.auto&amp;quot;&amp;gt;update&amp;lt;/property&amp;gt;之后，在数据库中不存在相应的数据表的时候，仍然无法自动创建表，可以查看是否是数据库方言的问题，
+出错原因：原代码 &amp;lt;property name=&amp;quot;h">
+<meta property="og:updated_time" content="2016-10-08T11:41:58.327Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hibernate学习相关总结和问题解决">
+<meta name="twitter:description" content="hibernate学习相关总结和问题解决hibernate不自动建表问题配置了&amp;lt;property name=&amp;quot;hibernate.hbm2ddl.auto&amp;quot;&amp;gt;update&amp;lt;/property&amp;gt;之后，在数据库中不存在相应的数据表的时候，仍然无法自动创建表，可以查看是否是数据库方言的问题，
+出错原因：原代码 &amp;lt;property name=&amp;quot;h">
+  
+    <link rel="alternative" href="/atom.xml" title="南北" type="application/atom+xml">
+  
+  <meta name="summary" content="一边写一边玩">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">Song</h5>
+        <a href="mailto:cqsongjin@foxmail.com" title="cqsongjin@foxmail.com" class="mail">cqsongjin@foxmail.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              分类
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              标签
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/SongJin1994" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/about"  >
+              <i class="icon icon-lg icon-about"></i>
+              关于
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>南北 &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">hibernate学习相关总结和问题解决</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">hibernate学习相关总结和问题解决</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2016-08-06T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2016-08-07
+</time>
+
+
+        
+    </h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-hibernate学习相关总结和问题解决" 
+  class="article article-type-post" itemprop="blogPost">
+    <div class="post-meta flex-row">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ORM/">ORM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/框架/">框架</a></li></ul>
+
+    </div>
+    <div class="post-body">
+        <aside class="post-widget" id="post-widget">
+
+            
+            <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hibernate学习相关总结和问题解决"><span class="post-toc-text">hibernate学习相关总结和问题解决</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hibernate不自动建表问题"><span class="post-toc-text">hibernate不自动建表问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置文件模板记录"><span class="post-toc-text">配置文件模板记录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hibernate4获取SessionFactory的方式变化"><span class="post-toc-text">hibernate4获取SessionFactory的方式变化</span></a></li></ol></li></ol>
+            </nav>
+            
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="hibernate学习相关总结和问题解决"><a href="#hibernate学习相关总结和问题解决" class="headerlink" title="hibernate学习相关总结和问题解决"></a>hibernate学习相关总结和问题解决</h2><h3 id="hibernate不自动建表问题"><a href="#hibernate不自动建表问题" class="headerlink" title="hibernate不自动建表问题"></a>hibernate不自动建表问题</h3><p>配置了<code>&lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/property&gt;</code>之后，在数据库中不存在相应的数据表的时候，仍然无法自动创建表，可以查看是否是数据库方言的问题，</p>
+<p>出错原因：原代码 <code>&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLInnoDBDialect&lt;/property&gt;</code>在mysql5.5以上版本，配置方言的时候mysql默认存储引擎为InnoDB，需创建新表（表名不存在），数据库方言只能选择MySQLDialect；</p>
+<p>修改方案：修改配置为<code>&lt;property name=&quot;dialect&quot;&gt;org.hibernate.dialect.MySQL5InnoDBDialect&lt;/property&gt;</code>（推荐）</p>
+<p>或者<code>&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQDialect&lt;/property&gt;</code></p>
+<h3 id="配置文件模板记录"><a href="#配置文件模板记录" class="headerlink" title="配置文件模板记录"></a>配置文件模板记录</h3><pre><code>&lt;?xml version=&apos;1.0&apos; encoding=&apos;utf-8&apos;?&gt;
+&lt;!DOCTYPE hibernate-configuration PUBLIC
+        &quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot;
+        &quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&gt;
+
+&lt;hibernate-configuration&gt;
+
+    &lt;session-factory&gt;
+
+        &lt;!-- Database connection settings --&gt;
+        &lt;property name=&quot;connection.driver_class&quot;&gt;com.mysql.jdbc.Driver&lt;/property&gt;
+        &lt;property name=&quot;connection.url&quot;&gt;jdbc:mysql://localhost:3306/baron&lt;/property&gt;
+        &lt;property name=&quot;connection.username&quot;&gt;root&lt;/property&gt;
+        &lt;property name=&quot;connection.password&quot;&gt;songjin&lt;/property&gt;
+
+        &lt;!-- JDBC connection pool (use the built-in) --&gt;
+        &lt;property name=&quot;connection.pool_size&quot;&gt;1&lt;/property&gt;
+
+        &lt;!-- SQL dialect --&gt;
+        &lt;property name=&quot;dialect&quot;&gt;org.hibernate.dialect.MySQL5InnoDBDialect&lt;/property&gt;
+
+        &lt;!-- Enable Hibernate&apos;s automatic session context management --&gt;
+        &lt;property name=&quot;current_session_context_class&quot;&gt;thread&lt;/property&gt;
+
+        &lt;!-- Disable the second-level cache  --&gt;
+        &lt;!-- &lt;property name=&quot;cache.provider_class&quot;&gt;org.hibernate.cache.internal.NoCacheProvider&lt;/property&gt; --&gt;
+
+        &lt;!-- Echo all executed SQL to stdout --&gt;
+        &lt;property name=&quot;show_sql&quot;&gt;true&lt;/property&gt;
+
+        &lt;!-- Drop and re-create the database schema on startup --&gt;
+        &lt;property name=&quot;hbm2ddl.auto&quot;&gt;update&lt;/property&gt;
+        &lt;property name=&quot;hibernate.format_sql&quot;&gt;true&lt;/property&gt;
+        &lt;!-- &lt;mapping resource=&quot;org/hibernate/tutorial/domain/Event.hbm.xml&quot;/&gt; --&gt;
+        &lt;mapping resource=&quot;com/song/hb/model/user.hbm.xml&quot;/&gt;
+        &lt;mapping class=&quot;com.song.hb.model.Teacher&quot;/&gt;
+    &lt;/session-factory&gt;
+
+&lt;/hibernate-configuration&gt;
+</code></pre><h3 id="hibernate4获取SessionFactory的方式变化"><a href="#hibernate4获取SessionFactory的方式变化" class="headerlink" title="hibernate4获取SessionFactory的方式变化"></a>hibernate4获取SessionFactory的方式变化</h3><pre><code>Configuration configuration = new Configuration().configure();
+StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+</code></pre>
+
+            
+            
+            <blockquote>
+                <p>
+                本文地址：
+                <a href="https://songjin1994.github.io/2016/08/07/hibernate学习相关总结和问题解决/" target="_blank" rel="external">https://songjin1994.github.io/2016/08/07/hibernate学习相关总结和问题解决/</a>
+                </p>
+                <footer><cite><a href="https://songjin1994.github.io">@南北</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2016/08/20/java算法基础之常用排序算法/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">java算法基础之常用排序算法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2016/06/25/SpringMVC学习相关总结/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">SpringMVC学习相关总结</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+            
+
+
+
+        </div>
+    </div>
+</article>
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script>
+var BLOG_SHARE = {
+    title: "hibernate学习相关总结和问题解决",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "https://songjin1994.github.io/2016/08/07/hibernate学习相关总结和问题解决/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

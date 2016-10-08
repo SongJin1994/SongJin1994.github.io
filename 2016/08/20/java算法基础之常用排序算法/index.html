@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java算法基础之常用排序算法 | 南北 | Baron&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="算法,排序">
+  <meta name="description" content="java算法基础之常用排序算法1.冒泡排序冒泡排序算法的基本思路为：依次比较相邻两数，如果两数的顺序错误，就交换两个数的位置，直到比较完所有的数，则排序完成，java实现的代码如下所示：
+public static void bubbleSort(int[] array){
+        for (int i = array.length-1;i &amp;gt;0;i--){">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java算法基础之常用排序算法">
+<meta property="og:url" content="https://songjin1994.github.io/2016/08/20/java算法基础之常用排序算法/index.html">
+<meta property="og:site_name" content="南北">
+<meta property="og:description" content="java算法基础之常用排序算法1.冒泡排序冒泡排序算法的基本思路为：依次比较相邻两数，如果两数的顺序错误，就交换两个数的位置，直到比较完所有的数，则排序完成，java实现的代码如下所示：
+public static void bubbleSort(int[] array){
+        for (int i = array.length-1;i &amp;gt;0;i--){">
+<meta property="og:updated_time" content="2016-10-08T11:46:15.166Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java算法基础之常用排序算法">
+<meta name="twitter:description" content="java算法基础之常用排序算法1.冒泡排序冒泡排序算法的基本思路为：依次比较相邻两数，如果两数的顺序错误，就交换两个数的位置，直到比较完所有的数，则排序完成，java实现的代码如下所示：
+public static void bubbleSort(int[] array){
+        for (int i = array.length-1;i &amp;gt;0;i--){">
+  
+    <link rel="alternative" href="/atom.xml" title="南北" type="application/atom+xml">
+  
+  <meta name="summary" content="一边写一边玩">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">Song</h5>
+        <a href="mailto:cqsongjin@foxmail.com" title="cqsongjin@foxmail.com" class="mail">cqsongjin@foxmail.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              分类
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              标签
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/SongJin1994" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/about"  >
+              <i class="icon icon-lg icon-about"></i>
+              关于
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>南北 &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">java算法基础之常用排序算法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">java算法基础之常用排序算法</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2016-08-19T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2016-08-20
+</time>
+
+
+        
+    </h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-java算法基础之常用排序算法" 
+  class="article article-type-post" itemprop="blogPost">
+    <div class="post-meta flex-row">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+    </div>
+    <div class="post-body">
+        <aside class="post-widget" id="post-widget">
+
+            
+            <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#java算法基础之常用排序算法"><span class="post-toc-text">java算法基础之常用排序算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-冒泡排序"><span class="post-toc-text">1.冒泡排序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#时间复杂度问题"><span class="post-toc-text">时间复杂度问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-选择排序算法"><span class="post-toc-text">2.选择排序算法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-插入排序算法"><span class="post-toc-text">3.插入排序算法</span></a></li></ol></li></ol></li></ol>
+            </nav>
+            
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="java算法基础之常用排序算法"><a href="#java算法基础之常用排序算法" class="headerlink" title="java算法基础之常用排序算法"></a>java算法基础之常用排序算法</h1><h2 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h2><p>冒泡排序算法的基本思路为：依次比较相邻两数，如果两数的顺序错误，就交换两个数的位置，直到比较完所有的数，则排序完成，java实现的代码如下所示：</p>
+<pre><code>public static void bubbleSort(int[] array){
+        for (int i = array.length-1;i &gt;0;i--){
+            for (int j = 0;j &lt; i;j++){
+                if (array[j] &gt;array[j+1]){
+                    int tmp;
+                    tmp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = tmp;
+                }
+            }
+        }
+    }
+</code></pre><p>算法提示：在交换位置之前加入的布尔类型的变量exchangeflag作为标志位，如果在一轮比较中没有发生交换，则说明排序完成，无需继续进行循环。</p>
+<h3 id="时间复杂度问题"><a href="#时间复杂度问题" class="headerlink" title="时间复杂度问题"></a>时间复杂度问题</h3><ol>
+<li>冒泡排序算法最好的时间复杂度是O(n)</li>
+<li>冒泡排序算法最坏的时间复杂度是O(n^2)</li>
+<li>冒泡算法的平均时间复杂度是O(n^2)</li>
+</ol>
+<h3 id="2-选择排序算法"><a href="#2-选择排序算法" class="headerlink" title="2.选择排序算法"></a>2.选择排序算法</h3><p>选择排序算法的基本思路为：从被排序数组中找出最小的一个数放在数组的第一位，接着从剩下的数中选出最小的放在第二位，如此反复，直到排到第N-1位，排序结束</p>
+<p>算法如下：</p>
+<pre><code>public static void selectSort(int[] array){
+        for (int i = 0;i &lt; array.length-1;i++){
+            for (int j = i+1;j &lt; array.length;j++){
+                if (array[i] &lt;array[j]){
+                    int tmp;
+                    tmp = array[i];
+                    array[i] = array[j];
+                    array[j] = tmp;
+                }
+            }
+        }
+    }
+</code></pre><h3 id="3-插入排序算法"><a href="#3-插入排序算法" class="headerlink" title="3.插入排序算法"></a>3.插入排序算法</h3><p>插入排序算法的基本思路为：选择第一位数为已排序数，取出下一位未排序的数，从后往前扫描，如果被扫描的数大于该未排序数，则两数交换位置，然后接着扫描，直到找到已排序的数小于或等于该未排序数，则将该新元素插入到这个位置。接着取出下一位未排序数，重复以上操作，知道所有数完成排序。</p>
+<p>算法如下：</p>
+<pre><code>public static void insertSort(int [] array){
+        int temp;
+        for (int i =1;i &lt; array.length;i++){
+            for (int j = i;j &gt;0;j--){
+                if (array[j] &lt; array[j-1]){
+                    temp = array[j];
+                    array[j] = array[j-1];
+                    array[j-1] = temp;
+                }else {
+                    break;
+                }
+            }
+        }
+    }
+</code></pre>
+
+            
+            
+            <blockquote>
+                <p>
+                本文地址：
+                <a href="https://songjin1994.github.io/2016/08/20/java算法基础之常用排序算法/" target="_blank" rel="external">https://songjin1994.github.io/2016/08/20/java算法基础之常用排序算法/</a>
+                </p>
+                <footer><cite><a href="https://songjin1994.github.io">@南北</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2016/09/12/JavaScript基础知识整理/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JavaScript基础知识整理</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2016/08/07/hibernate学习相关总结和问题解决/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">hibernate学习相关总结和问题解决</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+            
+
+
+
+        </div>
+    </div>
+</article>
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script>
+var BLOG_SHARE = {
+    title: "java算法基础之常用排序算法",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "https://songjin1994.github.io/2016/08/20/java算法基础之常用排序算法/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

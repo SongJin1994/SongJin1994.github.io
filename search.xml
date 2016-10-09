@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[数据结构与算法常见问题总结]]></title>
+      <url>https://songjin1994.github.io/2016/10/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
+      <content type="html"><![CDATA[<h2 id="数据结构与算法常见问题总结"><a href="#数据结构与算法常见问题总结" class="headerlink" title="数据结构与算法常见问题总结"></a>数据结构与算法常见问题总结</h2><h3 id="输入一个整数，返回其反序整数"><a href="#输入一个整数，返回其反序整数" class="headerlink" title="输入一个整数，返回其反序整数"></a>输入一个整数，返回其反序整数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">Rev</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</div><div class="line">        String str = <span class="string">""</span>+n;</div><div class="line">        String tmp = <span class="string">""</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;str.length();i++)&#123;</div><div class="line">            tmp = tmp + str.charAt(str.length()-i-<span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> Integer.parseInt(tmp);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="利用栈实现回文验证，例如验证（）-【】括号使用的合法性"><a href="#利用栈实现回文验证，例如验证（）-【】括号使用的合法性" class="headerlink" title="利用栈实现回文验证，例如验证（）{}【】括号使用的合法性"></a>利用栈实现回文验证，例如验证（）{}【】括号使用的合法性</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMatch</span><span class="params">(String args)</span></span>&#123;</div><div class="line">        String str = args;</div><div class="line">        <span class="keyword">char</span> temp = <span class="string">' '</span>;</div><div class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</div><div class="line">        Stack&lt;Character&gt; stack = <span class="keyword">new</span> Stack&lt;Character&gt;();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;str.length();i++)&#123;</div><div class="line">            temp = str.charAt(i);</div><div class="line">            <span class="keyword">if</span> (<span class="string">'&#123;'</span> == temp || <span class="string">'['</span> == temp || <span class="string">'('</span> == temp)&#123;</div><div class="line">                stack.push(temp);</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">'&#125;'</span> == temp &amp;&amp; <span class="string">'&#123;'</span> != stack.pop())&#123;</div><div class="line">                flag = <span class="keyword">false</span>;<span class="keyword">break</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">']'</span> == temp &amp;&amp; <span class="string">'['</span> != stack.pop())&#123;</div><div class="line">                flag = <span class="keyword">false</span>;<span class="keyword">break</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">')'</span> == temp &amp;&amp; <span class="string">'('</span> != stack.pop())&#123;</div><div class="line">                flag = <span class="keyword">false</span>;<span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (! stack.empty())&#123;flag = <span class="keyword">false</span>;&#125;</div><div class="line">        <span class="keyword">return</span> flag;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###输出一个集合的所有子集<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">childlist</span><span class="params">(<span class="keyword">int</span>[] list)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span> num = <span class="number">1</span> &lt;&lt;list.length;</div><div class="line">        <span class="keyword">int</span> p=<span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;num-<span class="number">1</span>; i++)&#123;</div><div class="line">            p = i;</div><div class="line">            index = <span class="number">0</span>;</div><div class="line">            System.out.print(<span class="string">"&#123;"</span>);</div><div class="line">            <span class="keyword">while</span> (p &gt; <span class="number">0</span>)&#123;</div><div class="line">                <span class="keyword">if</span> ((p &amp; <span class="number">1</span>) &gt;<span class="number">0</span>)&#123;</div><div class="line">                    <span class="keyword">if</span> ((p &gt;&gt; <span class="number">1</span>)&gt;<span class="number">0</span>) &#123;</div><div class="line">                        System.out.print(list[index] + <span class="string">","</span>);</div><div class="line">                    &#125;<span class="keyword">else</span> &#123;</div><div class="line">                        System.out.print(list[index]);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                p &gt;&gt;=<span class="number">1</span>;</div><div class="line">                index++;</div><div class="line"></div><div class="line">            &#125;</div><div class="line">            System.out.println(<span class="string">"&#125;"</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>####使用循环实现二分查找<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">midSearch</span><span class="params">(<span class="keyword">int</span>[] arrays,<span class="keyword">int</span> key)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> mid = arrays.length/<span class="number">2</span>;</div><div class="line">    <span class="keyword">if</span> (key == arrays[mid])&#123;<span class="keyword">return</span> mid;&#125;</div><div class="line">    <span class="keyword">int</span> start = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> end = arrays.length-<span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span> (start &lt;= end)&#123;</div><div class="line">        mid = start + (end-start)/<span class="number">2</span>;</div><div class="line">        <span class="keyword">if</span> (key &lt; arrays[mid])&#123;</div><div class="line">            end = mid-<span class="number">1</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (key &gt; arrays[mid])&#123;</div><div class="line">            start = mid+<span class="number">1</span>;</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> mid;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="使用递归实现二分查找"><a href="#使用递归实现二分查找" class="headerlink" title="使用递归实现二分查找"></a>使用递归实现二分查找</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">midSearch2</span><span class="params">(<span class="keyword">int</span>[] arrays,<span class="keyword">int</span> start,<span class="keyword">int</span> end,<span class="keyword">int</span> key)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> mid = start + (end-start)/<span class="number">2</span>;</div><div class="line">    <span class="keyword">if</span> (key == arrays[mid])&#123;</div><div class="line">        <span class="keyword">return</span> mid;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (start &gt;= end)&#123;</div><div class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (key &lt; arrays[mid])&#123;</div><div class="line">        <span class="keyword">return</span> midSearch2(arrays,start,mid-<span class="number">1</span>,key);</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (key &gt; arrays[mid])&#123;</div><div class="line">        <span class="keyword">return</span> midSearch2(arrays,mid+<span class="number">1</span>,end,key);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="快速排序算法"><a href="#快速排序算法" class="headerlink" title="快速排序算法"></a>快速排序算法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">    <span class="comment">/**</span></div><div class="line">     * 重载方法一，对整个数组进行排序</div><div class="line">     * <span class="doctag">@param</span> arrays</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arrays)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (arrays == <span class="keyword">null</span> || arrays.length == <span class="number">0</span>)&#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        quickSort(arrays,<span class="number">0</span>,arrays.length-<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 重载方法二，对数组中指定区间进行排序</div><div class="line">     * <span class="doctag">@param</span> arrays</div><div class="line">     * <span class="doctag">@param</span> left</div><div class="line">     * <span class="doctag">@param</span> right</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arrays,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span> mid = parttion(arrays,left,right);</div><div class="line">        <span class="keyword">if</span> (left &lt; right)&#123;</div><div class="line">            quickSort(arrays,left,mid-<span class="number">1</span>);</div><div class="line">            quickSort(arrays,mid+<span class="number">1</span>,right);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 分治算法，返回基准关键值的位置</div><div class="line">     * <span class="doctag">@param</span> arrays</div><div class="line">     * <span class="doctag">@param</span> left</div><div class="line">     * <span class="doctag">@param</span> right</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">parttion</span><span class="params">(<span class="keyword">int</span>[] arrays,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span> flag = arrays[left];</div><div class="line">        <span class="keyword">while</span> (left &lt; right)&#123;</div><div class="line">            <span class="keyword">while</span> (arrays[right] &gt;= flag &amp;&amp; left &lt; right)&#123;</div><div class="line">                right--;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (left &lt; right)&#123;</div><div class="line">                arrays[left++] = arrays[right];</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">while</span> (arrays[left] &lt;= flag &amp;&amp; left &lt;right)&#123;</div><div class="line">                left++;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (left &lt; right)&#123;</div><div class="line">                arrays[right--] = arrays[left];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        arrays[left] = flag;</div><div class="line">        <span class="keyword">return</span> left;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[JavaScript基础知识整理]]></title>
+      <url>https://songjin1994.github.io/2016/09/12/JavaScript%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</url>
+      <content type="html"><![CDATA[<h1 id="JavaScript基础知识整理"><a href="#JavaScript基础知识整理" class="headerlink" title="JavaScript基础知识整理"></a>JavaScript基础知识整理</h1><h2 id="JavaScript对象"><a href="#JavaScript对象" class="headerlink" title="JavaScript对象"></a>JavaScript对象</h2><ol>
+<li>JavaScript对象——无序的集合数据类型，由若干键值对组成。</li>
+<li>访问对象内部属性有两种方法，object.prop和obje[‘prop’]，其中后者主要用于属性不是一个有效的变量的情况。</li>
+<li>在JavaScript中，访问对象中不存在的属性不会报错，而会返回undefined。</li>
+<li>删除属性操作 delete object.prop。</li>
+<li>检测某一属性是否存在 prop in object，其中继承所得到的属性也包括在其中。</li>
+<li>判断一个属性是否为自身拥有而非继承所得到用hasOwnProperty(),object.hasOwnProperty(‘prop’)。</li>
+</ol>
+<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><p>if{}…else{}<br>注意：满足if条件后，就会执行if内的代码，执行后不会再判断else部分的条件是否满足</p>
+<p>##循环</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[java算法基础之常用排序算法]]></title>
+      <url>https://songjin1994.github.io/2016/08/20/java%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E7%94%A8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h1 id="java算法基础之常用排序算法"><a href="#java算法基础之常用排序算法" class="headerlink" title="java算法基础之常用排序算法"></a>java算法基础之常用排序算法</h1><h2 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h2><p>冒泡排序算法的基本思路为：依次比较相邻两数，如果两数的顺序错误，就交换两个数的位置，直到比较完所有的数，则排序完成，java实现的代码如下所示：</p>
+<pre><code>public static void bubbleSort(int[] array){
+        for (int i = array.length-1;i &gt;0;i--){
+            for (int j = 0;j &lt; i;j++){
+                if (array[j] &gt;array[j+1]){
+                    int tmp;
+                    tmp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = tmp;
+                }
+            }
+        }
+    }
+</code></pre><p>算法提示：在交换位置之前加入的布尔类型的变量exchangeflag作为标志位，如果在一轮比较中没有发生交换，则说明排序完成，无需继续进行循环。</p>
+<h3 id="时间复杂度问题"><a href="#时间复杂度问题" class="headerlink" title="时间复杂度问题"></a>时间复杂度问题</h3><ol>
+<li>冒泡排序算法最好的时间复杂度是O(n)</li>
+<li>冒泡排序算法最坏的时间复杂度是O(n^2)</li>
+<li>冒泡算法的平均时间复杂度是O(n^2)</li>
+</ol>
+<h3 id="2-选择排序算法"><a href="#2-选择排序算法" class="headerlink" title="2.选择排序算法"></a>2.选择排序算法</h3><p>选择排序算法的基本思路为：从被排序数组中找出最小的一个数放在数组的第一位，接着从剩下的数中选出最小的放在第二位，如此反复，直到排到第N-1位，排序结束</p>
+<p>算法如下：</p>
+<pre><code>public static void selectSort(int[] array){
+        for (int i = 0;i &lt; array.length-1;i++){
+            for (int j = i+1;j &lt; array.length;j++){
+                if (array[i] &lt;array[j]){
+                    int tmp;
+                    tmp = array[i];
+                    array[i] = array[j];
+                    array[j] = tmp;
+                }
+            }
+        }
+    }
+</code></pre><h3 id="3-插入排序算法"><a href="#3-插入排序算法" class="headerlink" title="3.插入排序算法"></a>3.插入排序算法</h3><p>插入排序算法的基本思路为：选择第一位数为已排序数，取出下一位未排序的数，从后往前扫描，如果被扫描的数大于该未排序数，则两数交换位置，然后接着扫描，直到找到已排序的数小于或等于该未排序数，则将该新元素插入到这个位置。接着取出下一位未排序数，重复以上操作，知道所有数完成排序。</p>
+<p>算法如下：</p>
+<pre><code>public static void insertSort(int [] array){
+        int temp;
+        for (int i =1;i &lt; array.length;i++){
+            for (int j = i;j &gt;0;j--){
+                if (array[j] &lt; array[j-1]){
+                    temp = array[j];
+                    array[j] = array[j-1];
+                    array[j-1] = temp;
+                }else {
+                    break;
+                }
+            }
+        }
+    }
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[hibernate学习相关总结和问题解决]]></title>
+      <url>https://songjin1994.github.io/2016/08/07/hibernate%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93%E5%92%8C%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
+      <content type="html"><![CDATA[<h2 id="hibernate学习相关总结和问题解决"><a href="#hibernate学习相关总结和问题解决" class="headerlink" title="hibernate学习相关总结和问题解决"></a>hibernate学习相关总结和问题解决</h2><h3 id="hibernate不自动建表问题"><a href="#hibernate不自动建表问题" class="headerlink" title="hibernate不自动建表问题"></a>hibernate不自动建表问题</h3><p>配置了<code>&lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/property&gt;</code>之后，在数据库中不存在相应的数据表的时候，仍然无法自动创建表，可以查看是否是数据库方言的问题，</p>
+<p>出错原因：原代码 <code>&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLInnoDBDialect&lt;/property&gt;</code>在mysql5.5以上版本，配置方言的时候mysql默认存储引擎为InnoDB，需创建新表（表名不存在），数据库方言只能选择MySQLDialect；</p>
+<p>修改方案：修改配置为<code>&lt;property name=&quot;dialect&quot;&gt;org.hibernate.dialect.MySQL5InnoDBDialect&lt;/property&gt;</code>（推荐）</p>
+<p>或者<code>&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQDialect&lt;/property&gt;</code></p>
+<h3 id="配置文件模板记录"><a href="#配置文件模板记录" class="headerlink" title="配置文件模板记录"></a>配置文件模板记录</h3><pre><code>&lt;?xml version=&apos;1.0&apos; encoding=&apos;utf-8&apos;?&gt;
+&lt;!DOCTYPE hibernate-configuration PUBLIC
+        &quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot;
+        &quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&gt;
+
+&lt;hibernate-configuration&gt;
+
+    &lt;session-factory&gt;
+
+        &lt;!-- Database connection settings --&gt;
+        &lt;property name=&quot;connection.driver_class&quot;&gt;com.mysql.jdbc.Driver&lt;/property&gt;
+        &lt;property name=&quot;connection.url&quot;&gt;jdbc:mysql://localhost:3306/baron&lt;/property&gt;
+        &lt;property name=&quot;connection.username&quot;&gt;root&lt;/property&gt;
+        &lt;property name=&quot;connection.password&quot;&gt;songjin&lt;/property&gt;
+
+        &lt;!-- JDBC connection pool (use the built-in) --&gt;
+        &lt;property name=&quot;connection.pool_size&quot;&gt;1&lt;/property&gt;
+
+        &lt;!-- SQL dialect --&gt;
+        &lt;property name=&quot;dialect&quot;&gt;org.hibernate.dialect.MySQL5InnoDBDialect&lt;/property&gt;
+
+        &lt;!-- Enable Hibernate&apos;s automatic session context management --&gt;
+        &lt;property name=&quot;current_session_context_class&quot;&gt;thread&lt;/property&gt;
+
+        &lt;!-- Disable the second-level cache  --&gt;
+        &lt;!-- &lt;property name=&quot;cache.provider_class&quot;&gt;org.hibernate.cache.internal.NoCacheProvider&lt;/property&gt; --&gt;
+
+        &lt;!-- Echo all executed SQL to stdout --&gt;
+        &lt;property name=&quot;show_sql&quot;&gt;true&lt;/property&gt;
+
+        &lt;!-- Drop and re-create the database schema on startup --&gt;
+        &lt;property name=&quot;hbm2ddl.auto&quot;&gt;update&lt;/property&gt;
+        &lt;property name=&quot;hibernate.format_sql&quot;&gt;true&lt;/property&gt;
+        &lt;!-- &lt;mapping resource=&quot;org/hibernate/tutorial/domain/Event.hbm.xml&quot;/&gt; --&gt;
+        &lt;mapping resource=&quot;com/song/hb/model/user.hbm.xml&quot;/&gt;
+        &lt;mapping class=&quot;com.song.hb.model.Teacher&quot;/&gt;
+    &lt;/session-factory&gt;
+
+&lt;/hibernate-configuration&gt;
+</code></pre><h3 id="hibernate4获取SessionFactory的方式变化"><a href="#hibernate4获取SessionFactory的方式变化" class="headerlink" title="hibernate4获取SessionFactory的方式变化"></a>hibernate4获取SessionFactory的方式变化</h3><pre><code>Configuration configuration = new Configuration().configure();
+StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[SpringMVC学习相关总结]]></title>
+      <url>https://songjin1994.github.io/2016/06/25/SpringMVC%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/</url>
+      <content type="html"><![CDATA[<h2 id="SpringMVC学习相关总结"><a href="#SpringMVC学习相关总结" class="headerlink" title="SpringMVC学习相关总结"></a>SpringMVC学习相关总结</h2><p>前言：近期从学习s2sh框架转到SpringMVC，写下此随笔记录学习中的问题和总结，方便日后进行查阅</p>
+<h3 id="SpringMVC框架特点"><a href="#SpringMVC框架特点" class="headerlink" title="SpringMVC框架特点"></a>SpringMVC框架特点</h3><p>相比较Struts2来说，SpringMVC是一个轻量级的MVC框架。之所以说轻量级，是因为Struts2是基于类级别的拦截，针对每一个请求，都需要一个对应的Action来进行处理，而SpringMVC是基于方法级别的拦截，开发效率和执行效率要高于Struts2.</p>
+<p>SpringMVC的核心是一个DispatcherServlet类。与大多数javaWeb框架一样，SpringMVC所有的请求都会通过一个前端控制器Servlet，也就是DispatcherServlet</p>
+<p>DispatcherServlet的任务就是将请求发送给SpringMVC控制器，即一个Controller。控制器是一个用于处理请求的Spring组件。</p>
+<p>通过以上内容，对SpringMVC有了一个大概的了解，接下里将进行一个简单的SpringMVC框架的配置。</p>
+<h3 id="配置SpringMVC"><a href="#配置SpringMVC" class="headerlink" title="配置SpringMVC"></a>配置SpringMVC</h3><p>补充：Servlet3.0新特性：</p>
+<ol>
+<li>异步处理支持：有了该特性，Servlet 线程不再需要一直阻塞，直到业务处理完毕才能再输出响应，最后才结束该 Servlet 线程。在接收到请求之后，Servlet 线程可以将耗时的操作委派给另一个线程来完成，自己在不生成响应的情况下返回至容器。针对业务处理较耗时的情况，这将大大减少服务器资源的占用，并且提高并发处理速度。</li>
+<li>新增的注解支持：该版本新增了若干注解，用于简化 Servlet、过滤器（Filter）和监听器（Listener）的声明，这使得 web.xml 部署描述文件从该版本开始不再是必选的了。</li>
+<li>可插性支持：熟悉 Struts2 的开发者一定会对其通过插件的方式与包括 Spring 在内的各种常用框架的整合特性记忆犹新。将相应的插件封装成 JAR 包并放在类路径下，Struts2 运行时便能自动加载这些插件。现在 Servlet 3.0 提供了类似的特性，开发者可以通过插件的方式很方便的扩充已有 Web 应用的功能，而不需要修改原有的应用。</li>
+</ol>
+<p>传统的Servlet配置方式是采用web.xml文件进行配置。但是在Servlet3的新规范中，并不推荐这种配置方式，而通过spring3.1之后的功能增强和Servlet3的新规范，可以使用一种更便捷的新方法，通过java类的方式来配置DispatcherServlet</p>
+<p>首先，需要新建一个类，继承AbstractAnnotationConfigDispatcherServletInitializer类，我将这个类命名为MyWebAppInitializer</p>
+<p>MyWebAppInitializer.java</p>
+<pre><code>package com.song.web.config;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import javax.servlet.Filter;
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration;
+
+public class MyWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+    @Override
+    protected Class&lt;?&gt;[] getRootConfigClasses() {
+        return new Class&lt;?&gt;[] {RootConfig.class};
+    }
+
+    @Override
+    protected Class&lt;?&gt;[] getServletConfigClasses() {
+        return new Class&lt;?&gt;[] {WebConfig.class};
+    }
+
+    @Override
+    protected String[] getServletMappings() {
+        return new String[] {&quot;/&quot;};
+    }
+
+    /**
+     * 可用此方法配置Filter
+     * @return
+     */
+    @Override
+    protected Filter[] getServletFilters() {
+        return new Filter[] {};
+    }
+
+    /**
+     * 上传文件参数配置
+     * @param registration
+     */
+    @Override
+    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+        registration.setMultipartConfig(
+                new MultipartConfigElement(&quot;d:/tmp/&quot;,419430400,419430400,0)
+        );
+    }
+}
+</code></pre><p>下面对这个类进行说明，为什么要创建一个这样的类？在Servlet3.0的环境中，容器会在类路径中查找实现了javax.servlet.ServletContainerInitializer接口的类，如果找到了这个类，就用它来配置Servlet容器。幸运的是，Spring已经提供了这个接口的实现，那就是SpringServletContainerInitializer这个类，这个类又会反过来查找实现了WebApplicationInitializer接口的类，并将非陪的任务交给他们完成。Spring3.2之后提供了一个便利的实现，那就是AbstractAnnotationConfigDispatcherServletInitializer这个类，由于MyWebAppInitializer继承了这个类，也就同时实现了WebApplicationInitializer这个接口，所以当部署到Servlet3.0容器中的时候，容器就会自动发现它，并用来配置Servlet上下文。通过其中的方法，即可完成对DispatcherServlet的配置</p>
+<p>下面对类中的方法进行说明</p>
+<p>getRootConfigClasses()：返回一个Spring配置类数组，用来配置其他工具bean类，例如DataSource，Mybatis，Service类等等。</p>
+<p>getServletConfigClasses()：返回一个springMVC配置类数组，用来配置与web相关的bean类，例如controller类等等。</p>
+<p>AbstractAnnotationConfigDispatcherServletInitializer在初始化的时候，会自动帮我们注册DispatcherServlet类，并根据getServletConfigClasses（）提供的配置类创建servletContext，但在SpringWeb应用中，一般还会有另一个ApplicationContext，是由ContextLoaderListener创建的，其中ApplicationContext是ServletContext的父容器，也就是说ServletContext可以访问ApplicationContext中声明的bean。</p>
+<p>除了以上简单配置外，另外springMVC所需要的各种过滤器并没有在其中进行配置，感觉这样配置的话会显得很杂乱，所以我个人是将这些过滤器在wwb.xml中进行配置，如编码过滤器配置如下：</p>
+<pre><code>  &lt;filter&gt;
+  &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
+  &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
+  &lt;init-param&gt;
+    &lt;param-name&gt;encoding&lt;/param-name&gt;
+    &lt;param-value&gt;utf-8&lt;/param-value&gt;
+  &lt;/init-param&gt;
+  &lt;init-param&gt;
+    &lt;param-name&gt;forceEncoding&lt;/param-name&gt;
+    &lt;param-value&gt;true&lt;/param-value&gt;
+  &lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+  &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
+  &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+</code></pre><p>其中RootConfig.java代码如下：</p>
+<pre><code>package com.song.web.config;
+
+import org.springframework.context.annotation.*;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
+
+/**
+ * 声明为配置类，用于配置Spring容器
+ */
+@Configuration
+/**
+ * 导入其他配置文件，当只能通过mxl配置某些组件的时候可以考虑这种方式，此处用于引入Spring组件的相关配置
+ */
+@ImportResource(&quot;classpath:xml/spring-mybatis.xml&quot;)
+/**
+ * 配置组件扫描，自动扫描相关包下使用@Component、@Controller、@Service等注解的类，将其配置为bean组件
+ */
+@ComponentScan(basePackages ={&quot;com.song&quot;},
+        excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION,value = EnableWebMvc.class)})
+public class RootConfig {
+
+}
+</code></pre><p>WebConfig.java</p>
+<pre><code>package com.song.web.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+@Configuration
+/***
+ * 启用SpringMvc的支持
+ */
+@EnableWebMvc
+@ComponentScan(&quot;com.song,web&quot;)
+public class WebConfig extends WebMvcConfigurerAdapter{
+    /**
+     * 注册一个简单的视图解析器
+     * @return
+     */
+    @Bean
+    public ViewResolver viewResolver(){
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        resolver.setPrefix(&quot;/WEB-INF/views/&quot;);
+        resolver.setSuffix(&quot;.jsp&quot;);
+        resolver.setExposeContextBeansAsAttributes(true);
+        return resolver;
+    }
+
+    /**
+     * 用于上传操作的组件
+     * @return
+     */
+    @Bean
+    public MultipartResolver multipartResolver(){
+        return new StandardServletMultipartResolver();
+    }
+
+    /**
+     * 配置静态资源的处理，将静态资源的请求转发到Servlet容器中默认的Servlet上
+     * @param configurer
+     */
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
+}
+</code></pre><p>以上便完成了一个简单的SpringMVC框架配置，接下来为SpringMVC配置Mybatis持久层支持</p>
+<h3 id="整合Mybatis框架"><a href="#整合Mybatis框架" class="headerlink" title="整合Mybatis框架"></a>整合Mybatis框架</h3><h4 id="加入Mybatis相关组件"><a href="#加入Mybatis相关组件" class="headerlink" title="加入Mybatis相关组件"></a>加入Mybatis相关组件</h4><p>首先需要数据源，本例采用数据源为dbcp2，整个配置文件如下：</p>
+<p>spring-mybatis.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+    &lt;!-- 3.配置SqlSessionFactory对象 --&gt;
+    &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+        &lt;!-- 注入数据库连接池 --&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
+        &lt;!-- 配置MyBaties全局配置文件:spring-mybatis.xml --&gt;
+        &lt;property name=&quot;configLocation&quot; value=&quot;classpath:xml/mybatis-config.xml&quot; /&gt;
+
+        &lt;!-- 扫描sql配置文件:mapper需要的xml文件，当Mapper接口和xml文件在同一个目录下时，可省略此项 --&gt;
+        &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:com/song/web/model/*.xml&quot; /&gt;
+    &lt;/bean&gt;
+
+     &lt;!--4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中--&gt;
+    &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+        &lt;!-- 注入sqlSessionFactory --&gt;
+        &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot; /&gt;
+        &lt;!-- 给出需要扫描Dao接口包 --&gt;
+        &lt;property name=&quot;basePackage&quot; value=&quot;com.song.web.mapper&quot; /&gt;
+    &lt;/bean&gt;
+    &lt;bean id=&quot;dataSource&quot; class=&quot;org.apache.commons.dbcp2.BasicDataSource&quot; destroy-method=&quot;close&quot;&gt;
+        &lt;property name=&quot;driverClassName&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;
+        &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/baron&quot;/&gt;
+        &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;
+        &lt;property name=&quot;password&quot; value=&quot;songjin&quot;/&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre><p>将xml导入到前文所提到的RootConfigjava类中即可完成配置接下来需要对Mybatis进行全局的配置</p>
+<p>mybatis-config.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE configuration
+        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;configuration&gt;
+    &lt;!-- 配置全局属性 --&gt;
+    &lt;settings&gt;
+        &lt;!-- 使用jdbc的getGeneratedKeys获取数据库自增主键值 --&gt;
+        &lt;setting name=&quot;useGeneratedKeys&quot; value=&quot;true&quot; /&gt;
+
+        &lt;!-- 使用列别名替换列名 默认:true --&gt;
+        &lt;setting name=&quot;useColumnLabel&quot; value=&quot;true&quot; /&gt;
+
+        &lt;!-- 开启驼峰命名转换:Table{create_time} -&gt; Entity{createTime} --&gt;
+        &lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot; /&gt;
+    &lt;/settings&gt;
+&lt;/configuration&gt;
+</code></pre><p>配置完成之后，就可以配置相应的Controller和Service进行测试了，这里就不一一详细说明了。</p>
+<h4 id="问题总结："><a href="#问题总结：" class="headerlink" title="问题总结："></a>问题总结：</h4><ol>
+<li>mybatis设置了主键自增之后为什么仍然报错，显示主键为空？原因是mybatis的主键自增需要是基于数据库的主键自增，所以在数据库里面一定要启动主键的自增选项，这样才会生效。</li>
+<li></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Struts2配置文件相关标签及其属性]]></title>
+      <url>https://songjin1994.github.io/2016/05/10/Struts2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3%E6%A0%87%E7%AD%BE%E5%8F%8A%E5%85%B6%E5%B1%9E%E6%80%A7/</url>
+      <content type="html"><![CDATA[<h1 id="Struts2配置文件相关标签及其属性"><a href="#Struts2配置文件相关标签及其属性" class="headerlink" title="Struts2配置文件相关标签及其属性"></a>Struts2配置文件相关标签及其属性<struts></struts></h1><h2 id="constant"><a href="#constant" class="headerlink" title="constant"></a>constant</h2><h2 id="package-用法和java的包类似，用于区分同名的action"><a href="#package-用法和java的包类似，用于区分同名的action" class="headerlink" title="package:用法和java的包类似，用于区分同名的action"></a>package:用法和java的包类似，用于区分同名的action</h2><ol>
+<li>name：包名</li>
+<li>extends：继承的包名，一般默认为“struts-default”</li>
+<li>namespace：指定名称空间，也就是访问此包下的Action需要访问的路径</li>
+<li>abstract：将包声明为抽象类型（即包中不包括action）</li>
+</ol>
+<h2 id="action"><a href="#action" class="headerlink" title="action"></a>action</h2><p>###action直接继承actionsupport类，主要实现execute（）方法路径访问先找filter，之后寻找struts配置文件中相应的namespace，如果无，法找到相应的namespace，则返回web.xml执行相应操作，如果找到了，则寻找对应的action，根据执行action后返回的String字符串，在result标签中找到对应的result视图执行</p>
+<ol>
+<li>name：用于配置Action对象被请求的URL映射</li>
+<li>class：指定Action对象的类名</li>
+<li>method：设置请求Action对象时，调用Action对象的哪一个方法,通过method指定来实现方法调用会产生大量action实例，浪费资源，所以一般不推荐使用。一般使用动态方法调用DMI</li>
+<li>converter：指定Action对象类型转换器的类</li>
+</ol>
+<h2 id="result"><a href="#result" class="headerlink" title="result"></a>result</h2><h2 id="相关注意事项："><a href="#相关注意事项：" class="headerlink" title="相关注意事项："></a>相关注意事项：</h2>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[JDBC进行数据库连接操作]]></title>
+      <url>https://songjin1994.github.io/2016/02/13/webserve_%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</url>
+      <content type="html"><![CDATA[<h1 id="JDBC进行数据库连接操作"><a href="#JDBC进行数据库连接操作" class="headerlink" title="JDBC进行数据库连接操作"></a>JDBC进行数据库连接操作</h1><blockquote>
+<p>在page指令中可以使用import导入所需要的java开发包java.sql，进行数据库开发。</p>
+</blockquote>
+<p>查询代码如下所示</p>
+<pre><code>&lt;%@page contentType=&quot;text/html&quot; pageEncoding=&quot;GBK&quot; %&gt;
+&lt;%@page import=&quot;java.sql.*&quot; %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;jdbc编程测试&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;%!
+    public static final String DBDRIVER=&quot;org.gjt.mm.mysql.Driver&quot;;
+    public static final String DBURL=&quot;jdbc:mysql://localhost:3306/baron&quot;;
+    public static final String DBUSER=&quot;root&quot;;
+    public static final String DBPASS=&quot;mysql&quot;;
+%&gt;
+&lt;%
+    Connection conn=null;
+    PreparedStatement pstmt=null;
+    ResultSet rs=null;
+%&gt;
+&lt;%
+    try {
+        Class.forName(DBDRIVER);
+        conn=DriverManager.getConnection(DBURL,DBUSER,DBPASS);
+        String sql=&quot;SELECT name,age FROM user&quot;;
+        pstmt=conn.prepareStatement(sql);
+        rs=pstmt.executeQuery();
+        while (rs.next()){
+            String name=rs.getString(&quot;name&quot;);
+            int age=rs.getInt(&quot;age&quot;);
+
+%&gt;
+&lt;%=name%&gt;&lt;br&gt;&lt;%=age%&gt;&lt;br&gt;
+&lt;%
+        }
+        rs.close();
+        pstmt.close();
+        conn.close();
+
+    }catch (Exception e){
+        e.printStackTrace();
+    }
+
+%&gt;
+&lt;%=&quot;结果显示&quot;%&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>]]></content>
+    </entry>
+    
+  
+  
+</search>

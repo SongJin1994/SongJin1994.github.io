@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://songjin1994.github.io/"/>
-  <updated>2016-10-20T16:06:03.554Z</updated>
+  <updated>2016-11-07T10:07:30.548Z</updated>
   <id>https://songjin1994.github.io/</id>
   
   <author>
@@ -14,6 +14,110 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaWeb基础知识点总结</title>
+    <link href="https://songjin1994.github.io/2016/11/07/JavaWeb%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/"/>
+    <id>https://songjin1994.github.io/2016/11/07/JavaWeb基础知识点总结/</id>
+    <published>2016-11-07T07:04:36.000Z</published>
+    <updated>2016-11-07T10:07:30.548Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JavaWeb基础知识点总结"><a href="#JavaWeb基础知识点总结" class="headerlink" title="JavaWeb基础知识点总结"></a>JavaWeb基础知识点总结</h1><h2 id="JSP相关"><a href="#JSP相关" class="headerlink" title="JSP相关"></a>JSP相关</h2><h3 id="4种基本语法"><a href="#4种基本语法" class="headerlink" title="4种基本语法"></a>4种基本语法</h3><h4 id="JSP注释"><a href="#JSP注释" class="headerlink" title="JSP注释"></a>JSP注释</h4><h4 id="JSP声明"><a href="#JSP声明" class="headerlink" title="JSP声明"></a>JSP声明</h4><h4 id="输出JSP表达式"><a href="#输出JSP表达式" class="headerlink" title="输出JSP表达式"></a>输出JSP表达式</h4><h4 id="JSP脚本"><a href="#JSP脚本" class="headerlink" title="JSP脚本"></a>JSP脚本</h4><h3 id="三种编译指令"><a href="#三种编译指令" class="headerlink" title="三种编译指令"></a>三种编译指令</h3><h4 id="page指令"><a href="#page指令" class="headerlink" title="page指令"></a>page指令</h4><h4 id="include指令"><a href="#include指令" class="headerlink" title="include指令"></a>include指令</h4><h4 id="taglib指令"><a href="#taglib指令" class="headerlink" title="taglib指令"></a>taglib指令</h4><h3 id="7个动作指令"><a href="#7个动作指令" class="headerlink" title="7个动作指令"></a>7个动作指令</h3><h4 id="jsp-forward"><a href="#jsp-forward" class="headerlink" title="jsp:forward"></a>jsp:forward</h4><h4 id="jsp-param"><a href="#jsp-param" class="headerlink" title="jsp:param"></a>jsp:param</h4><h4 id="jsp-include"><a href="#jsp-include" class="headerlink" title="jsp:include"></a>jsp:include</h4><h4 id="jsp-plugin"><a href="#jsp-plugin" class="headerlink" title="jsp:plugin"></a>jsp:plugin</h4><h4 id="jsp-useBean"><a href="#jsp-useBean" class="headerlink" title="jsp:useBean"></a>jsp:useBean</h4><h4 id="jsp-setProperty"><a href="#jsp-setProperty" class="headerlink" title="jsp:setProperty"></a>jsp:setProperty</h4><h4 id="jsp-getProprtty"><a href="#jsp-getProprtty" class="headerlink" title="jsp:getProprtty"></a>jsp:getProprtty</h4><h3 id="9个内置对象"><a href="#9个内置对象" class="headerlink" title="9个内置对象"></a>9个内置对象</h3><h4 id="application"><a href="#application" class="headerlink" title="application"></a>application</h4><p>application是<code>javax.servlet.ServletContext</code>的实例，代表jsp所属的Web应用自身，用于jsp或者Servlet之间交换信息</p>
+<ol>
+<li><p>setAttribute(String attrName,Object value)方法：将一个值设置成application范围的属性，属性值对整个web应用有效</p>
+</li>
+<li><p>getAttribute(String attrName)方法：通过属性名获取一个application范围的属性值</p>
+</li>
+<li><p>获取web应用配置参数：使用application的getInitParameter(String paramName)获取web应用的配置参数，这些配置参数应该在web.xml文件中使用context-param元素配置，格式如下</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>参数名<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>参数值<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+<h4 id="config"><a href="#config" class="headerlink" title="config"></a>config</h4><p>config对象是<code>javax.servlet.ServletConfig</code>的实例，表示当前jsp文件的配置信息，通常jsp无需配置，所以该对象不常使用。但是在Servlet种用处较大，因为Servlet需要在web.xml文件中进行配置，可以用来指定配置参数</p>
+<ol>
+<li><p>getServletName()返回jsp对用的Servlet的名字，所有jsp的名字都相同，为jsp</p>
+</li>
+<li><p>getInitParameter(String paramName)方法用于获取jsp的配置参数，jsp参数在web.xml文件中配置格式如下</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Servlet名称<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">jsp-file</span>&gt;</span>jsp路径<span class="tag">&lt;/<span class="name">jsp-file</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">  		<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>参数名1<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">  		<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>参数值1<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>参数名2<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>参数值2<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+<h4 id="exception"><a href="#exception" class="headerlink" title="exception"></a>exception</h4><p>exception对象是Throwable的实例，代表jsp脚本中产生的错误和异常，是jsp页面异常机制的一部分，该对象仅在异常处理页面才有效</p>
+<h4 id="out"><a href="#out" class="headerlink" title="out"></a>out</h4><p>out对象代表一个页面输出流，通常用于在页面上输出变量值以及常量</p>
+<p>使用out的地方，都可以使用表达式<code>&lt;% %&gt;</code>来代替，显得更加简洁，表达式<code>&lt;% %&gt;</code>的本质就是out.write(…)</p>
+<h4 id="page"><a href="#page" class="headerlink" title="page"></a>page</h4><p>代表页面本身</p>
+<h4 id="pageContext"><a href="#pageContext" class="headerlink" title="pageContext"></a>pageContext</h4><p>该对象代表页面上下文，主要用于访问jsp之间的共享数据。使用pageContext可以访问page、request、response、application访问的变量</p>
+<h4 id="request"><a href="#request" class="headerlink" title="request"></a>request</h4><h4 id="response"><a href="#response" class="headerlink" title="response"></a>response</h4><h4 id="session"><a href="#session" class="headerlink" title="session"></a>session</h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;JavaWeb基础知识点总结&quot;&gt;&lt;a href=&quot;#JavaWeb基础知识点总结&quot; class=&quot;headerlink&quot; title=&quot;JavaWeb基础知识点总结&quot;&gt;&lt;/a&gt;JavaWeb基础知识点总结&lt;/h1&gt;&lt;h2 id=&quot;JSP相关&quot;&gt;&lt;a href=&quot;#
+    
+    </summary>
+    
+      <category term="javaweb" scheme="https://songjin1994.github.io/categories/javaweb/"/>
+    
+    
+      <category term="web" scheme="https://songjin1994.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下配置JavaWeb运行环境问题总结</title>
+    <link href="https://songjin1994.github.io/2016/11/01/Linux%E4%B8%8B%E9%85%8D%E7%BD%AEJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>https://songjin1994.github.io/2016/11/01/Linux下配置JavaWeb运行环境问题总结/</id>
+    <published>2016-11-01T03:04:38.000Z</published>
+    <updated>2016-11-03T17:20:32.976Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Linux下配置JavaWeb运行环境问题总结"><a href="#Linux下配置JavaWeb运行环境问题总结" class="headerlink" title="Linux下配置JavaWeb运行环境问题总结"></a>Linux下配置JavaWeb运行环境问题总结</h1><h2 id="tomcat启动延迟甚至卡住"><a href="#tomcat启动延迟甚至卡住" class="headerlink" title="tomcat启动延迟甚至卡住"></a>tomcat启动延迟甚至卡住</h2><p> 找到jdk1.x.x_xx/jre/lib/security/<a href="http://lib.csdn.net/base/javaee" target="_blank" rel="external">Java</a>.security文件，在文件中找到securerandom.source这个设置项，将其改为：</p>
+<p>securerandom.source=file:/dev/./urandom</p>
+<blockquote>
+<p>linux或者部分unix系统提供随机数设备是/dev/random 和/dev/urandom ，两个有区别，urandom安全性没有random高，但random需要时间间隔生成随机数。jdk默认调用random。</p>
+</blockquote>
+<h2 id="使用vi编辑器方向键变ABCD且backspace无法使用"><a href="#使用vi编辑器方向键变ABCD且backspace无法使用" class="headerlink" title="使用vi编辑器方向键变ABCD且backspace无法使用"></a>使用vi编辑器方向键变ABCD且backspace无法使用</h2><h2 id="Java环境变量的问题"><a href="#Java环境变量的问题" class="headerlink" title="Java环境变量的问题"></a>Java环境变量的问题</h2><h2 id="配置163软件源"><a href="#配置163软件源" class="headerlink" title="配置163软件源"></a>配置163软件源</h2><p>修改/etc/apt/sources.list文件内容如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.163.com/debian/ jessie main non-free contrib</div><div class="line">deb http://mirrors.163.com/debian/ jessie-updates main non-free contrib</div><div class="line">deb http://mirrors.163.com/debian/ jessie-backports main non-free contrib</div><div class="line">deb-src http://mirrors.163.com/debian/ jessie main non-free contrib</div><div class="line">deb-src http://mirrors.163.com/debian/ jessie-updates main non-free contrib</div><div class="line">deb-src http://mirrors.163.com/debian/ jessie-backports main non-free contrib</div><div class="line">deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib</div><div class="line">deb-src http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib</div></pre></td></tr></table></figure>
+<p>然后执行apt update命令即可修改软件源</p>
+<h2 id="安装最新版docker的命令"><a href="#安装最新版docker的命令" class="headerlink" title="安装最新版docker的命令"></a>安装最新版docker的命令</h2><p>直接使用<code>apt-get install docker</code>命令获取的docker版本较低，可以通过以下方式获取新版的docker</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crul</div></pre></td></tr></table></figure>
+<h2 id="docker常用命令汇总"><a href="#docker常用命令汇总" class="headerlink" title="docker常用命令汇总"></a>docker常用命令汇总</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Linux下配置JavaWeb运行环境问题总结&quot;&gt;&lt;a href=&quot;#Linux下配置JavaWeb运行环境问题总结&quot; class=&quot;headerlink&quot; title=&quot;Linux下配置JavaWeb运行环境问题总结&quot;&gt;&lt;/a&gt;Linux下配置JavaWeb运行
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://songjin1994.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://songjin1994.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker简单使用</title>
+    <link href="https://songjin1994.github.io/2016/10/23/docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
+    <id>https://songjin1994.github.io/2016/10/23/docker简单使用/</id>
+    <published>2016-10-23T12:58:28.000Z</published>
+    <updated>2016-11-07T07:00:49.145Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="docker简单使用"><a href="#docker简单使用" class="headerlink" title="docker简单使用"></a>docker简单使用</h1><h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><h3 id="apt-get方式安装"><a href="#apt-get方式安装" class="headerlink" title="apt-get方式安装"></a>apt-get方式安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install docker</div></pre></td></tr></table></figure>
+<h3 id="rpm方式安装"><a href="#rpm方式安装" class="headerlink" title="rpm方式安装"></a>rpm方式安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install docker-io</div></pre></td></tr></table></figure>
+<h3 id="使用Daocloud镜像站安装新版docker"><a href="#使用Daocloud镜像站安装新版docker" class="headerlink" title="使用Daocloud镜像站安装新版docker"></a>使用Daocloud镜像站安装新版docker</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -sSL https://get.daocloud.io/docker | sh</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;docker简单使用&quot;&gt;&lt;a href=&quot;#docker简单使用&quot; class=&quot;headerlink&quot; title=&quot;docker简单使用&quot;&gt;&lt;/a&gt;docker简单使用&lt;/h1&gt;&lt;h2 id=&quot;docker安装&quot;&gt;&lt;a href=&quot;#docker安装&quot; cla
+    
+    </summary>
+    
+      <category term="docker" scheme="https://songjin1994.github.io/categories/docker/"/>
+    
+    
+      <category term="docker" scheme="https://songjin1994.github.io/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>Spring之AOP</title>

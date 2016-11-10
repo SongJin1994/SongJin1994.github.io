@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="框架,Java,ORM," />
+  <meta name="keywords" content="web," />
 
 
 
@@ -86,19 +86,16 @@
 
 
 
-<meta name="description" content="hibernate学习相关总结和问题解决hibernate不自动建表问题配置了&amp;lt;property name=&amp;quot;hibernate.hbm2ddl.auto&amp;quot;&amp;gt;update&amp;lt;/property&amp;gt;之后，在数据库中不存在相应的数据表的时候，仍然无法自动创建表，可以查看是否是数据库方言的问题，
-出错原因：原代码 &amp;lt;property name=&amp;quot;h">
+<meta name="description" content="JavaWeb基础知识点总结JSP相关4种基本语法JSP注释JSP声明输出JSP表达式JSP脚本三种编译指令page指令include指令taglib指令7个动作指令jsp:forwardjsp:paramjsp:includejsp:pluginjsp:useBeanjsp:setPropertyjsp:getProprtty9个内置对象applicationapplication是javax.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hibernate学习相关总结和问题解决">
-<meta property="og:url" content="https://songjin1994.github.io/2016/08/07/hibernate学习相关总结和问题解决/index.html">
+<meta property="og:title" content="JavaWeb基础知识点总结">
+<meta property="og:url" content="https://songjin1994.github.io/2016/11/07/JavaWeb基础知识点总结/index.html">
 <meta property="og:site_name" content="南北">
-<meta property="og:description" content="hibernate学习相关总结和问题解决hibernate不自动建表问题配置了&amp;lt;property name=&amp;quot;hibernate.hbm2ddl.auto&amp;quot;&amp;gt;update&amp;lt;/property&amp;gt;之后，在数据库中不存在相应的数据表的时候，仍然无法自动创建表，可以查看是否是数据库方言的问题，
-出错原因：原代码 &amp;lt;property name=&amp;quot;h">
-<meta property="og:updated_time" content="2016-10-09T07:42:28.325Z">
+<meta property="og:description" content="JavaWeb基础知识点总结JSP相关4种基本语法JSP注释JSP声明输出JSP表达式JSP脚本三种编译指令page指令include指令taglib指令7个动作指令jsp:forwardjsp:paramjsp:includejsp:pluginjsp:useBeanjsp:setPropertyjsp:getProprtty9个内置对象applicationapplication是javax.">
+<meta property="og:updated_time" content="2016-11-07T10:07:30.548Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hibernate学习相关总结和问题解决">
-<meta name="twitter:description" content="hibernate学习相关总结和问题解决hibernate不自动建表问题配置了&amp;lt;property name=&amp;quot;hibernate.hbm2ddl.auto&amp;quot;&amp;gt;update&amp;lt;/property&amp;gt;之后，在数据库中不存在相应的数据表的时候，仍然无法自动创建表，可以查看是否是数据库方言的问题，
-出错原因：原代码 &amp;lt;property name=&amp;quot;h">
+<meta name="twitter:title" content="JavaWeb基础知识点总结">
+<meta name="twitter:description" content="JavaWeb基础知识点总结JSP相关4种基本语法JSP注释JSP声明输出JSP表达式JSP脚本三种编译指令page指令include指令taglib指令7个动作指令jsp:forwardjsp:paramjsp:includejsp:pluginjsp:useBeanjsp:setPropertyjsp:getProprtty9个内置对象applicationapplication是javax.">
 
 
 
@@ -119,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="https://songjin1994.github.io/2016/08/07/hibernate学习相关总结和问题解决/"/>
+  <link rel="canonical" href="https://songjin1994.github.io/2016/11/07/JavaWeb基础知识点总结/"/>
 
 
-  <title> hibernate学习相关总结和问题解决 | 南北 </title>
+  <title> JavaWeb基础知识点总结 | 南北 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -285,7 +282,7 @@
             
             
               
-                hibernate学习相关总结和问题解决
+                JavaWeb基础知识点总结
               
             
           </h1>
@@ -297,8 +294,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-07T00:00:00+08:00" content="2016-08-07">
-              2016-08-07
+            <time itemprop="dateCreated" datetime="2016-11-07T15:04:36+08:00" content="2016-11-07">
+              2016-11-07
             </time>
           </span>
 
@@ -311,8 +308,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hibernate/" itemprop="url" rel="index">
-                    <span itemprop="name">hibernate</span>
+                  <a href="/categories/javaweb/" itemprop="url" rel="index">
+                    <span itemprop="name">javaweb</span>
                   </a>
                 </span>
 
@@ -344,53 +341,32 @@
       
 
       
-        <h2 id="hibernate学习相关总结和问题解决"><a href="#hibernate学习相关总结和问题解决" class="headerlink" title="hibernate学习相关总结和问题解决"></a>hibernate学习相关总结和问题解决</h2><h3 id="hibernate不自动建表问题"><a href="#hibernate不自动建表问题" class="headerlink" title="hibernate不自动建表问题"></a>hibernate不自动建表问题</h3><p>配置了<code>&lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/property&gt;</code>之后，在数据库中不存在相应的数据表的时候，仍然无法自动创建表，可以查看是否是数据库方言的问题，</p>
-<p>出错原因：原代码 <code>&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLInnoDBDialect&lt;/property&gt;</code>在mysql5.5以上版本，配置方言的时候mysql默认存储引擎为InnoDB，需创建新表（表名不存在），数据库方言只能选择MySQLDialect；</p>
-<p>修改方案：修改配置为<code>&lt;property name=&quot;dialect&quot;&gt;org.hibernate.dialect.MySQL5InnoDBDialect&lt;/property&gt;</code>（推荐）</p>
-<p>或者<code>&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQDialect&lt;/property&gt;</code></p>
-<h3 id="配置文件模板记录"><a href="#配置文件模板记录" class="headerlink" title="配置文件模板记录"></a>配置文件模板记录</h3><pre><code>&lt;?xml version=&apos;1.0&apos; encoding=&apos;utf-8&apos;?&gt;
-&lt;!DOCTYPE hibernate-configuration PUBLIC
-        &quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot;
-        &quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&gt;
-
-&lt;hibernate-configuration&gt;
-
-    &lt;session-factory&gt;
-
-        &lt;!-- Database connection settings --&gt;
-        &lt;property name=&quot;connection.driver_class&quot;&gt;com.mysql.jdbc.Driver&lt;/property&gt;
-        &lt;property name=&quot;connection.url&quot;&gt;jdbc:mysql://localhost:3306/baron&lt;/property&gt;
-        &lt;property name=&quot;connection.username&quot;&gt;root&lt;/property&gt;
-        &lt;property name=&quot;connection.password&quot;&gt;songjin&lt;/property&gt;
-
-        &lt;!-- JDBC connection pool (use the built-in) --&gt;
-        &lt;property name=&quot;connection.pool_size&quot;&gt;1&lt;/property&gt;
-
-        &lt;!-- SQL dialect --&gt;
-        &lt;property name=&quot;dialect&quot;&gt;org.hibernate.dialect.MySQL5InnoDBDialect&lt;/property&gt;
-
-        &lt;!-- Enable Hibernate&apos;s automatic session context management --&gt;
-        &lt;property name=&quot;current_session_context_class&quot;&gt;thread&lt;/property&gt;
-
-        &lt;!-- Disable the second-level cache  --&gt;
-        &lt;!-- &lt;property name=&quot;cache.provider_class&quot;&gt;org.hibernate.cache.internal.NoCacheProvider&lt;/property&gt; --&gt;
-
-        &lt;!-- Echo all executed SQL to stdout --&gt;
-        &lt;property name=&quot;show_sql&quot;&gt;true&lt;/property&gt;
-
-        &lt;!-- Drop and re-create the database schema on startup --&gt;
-        &lt;property name=&quot;hbm2ddl.auto&quot;&gt;update&lt;/property&gt;
-        &lt;property name=&quot;hibernate.format_sql&quot;&gt;true&lt;/property&gt;
-        &lt;!-- &lt;mapping resource=&quot;org/hibernate/tutorial/domain/Event.hbm.xml&quot;/&gt; --&gt;
-        &lt;mapping resource=&quot;com/song/hb/model/user.hbm.xml&quot;/&gt;
-        &lt;mapping class=&quot;com.song.hb.model.Teacher&quot;/&gt;
-    &lt;/session-factory&gt;
-
-&lt;/hibernate-configuration&gt;
-</code></pre><h3 id="hibernate4获取SessionFactory的方式变化"><a href="#hibernate4获取SessionFactory的方式变化" class="headerlink" title="hibernate4获取SessionFactory的方式变化"></a>hibernate4获取SessionFactory的方式变化</h3><pre><code>Configuration configuration = new Configuration().configure();
-StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
-SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-</code></pre>
+        <h1 id="JavaWeb基础知识点总结"><a href="#JavaWeb基础知识点总结" class="headerlink" title="JavaWeb基础知识点总结"></a>JavaWeb基础知识点总结</h1><h2 id="JSP相关"><a href="#JSP相关" class="headerlink" title="JSP相关"></a>JSP相关</h2><h3 id="4种基本语法"><a href="#4种基本语法" class="headerlink" title="4种基本语法"></a>4种基本语法</h3><h4 id="JSP注释"><a href="#JSP注释" class="headerlink" title="JSP注释"></a>JSP注释</h4><h4 id="JSP声明"><a href="#JSP声明" class="headerlink" title="JSP声明"></a>JSP声明</h4><h4 id="输出JSP表达式"><a href="#输出JSP表达式" class="headerlink" title="输出JSP表达式"></a>输出JSP表达式</h4><h4 id="JSP脚本"><a href="#JSP脚本" class="headerlink" title="JSP脚本"></a>JSP脚本</h4><h3 id="三种编译指令"><a href="#三种编译指令" class="headerlink" title="三种编译指令"></a>三种编译指令</h3><h4 id="page指令"><a href="#page指令" class="headerlink" title="page指令"></a>page指令</h4><h4 id="include指令"><a href="#include指令" class="headerlink" title="include指令"></a>include指令</h4><h4 id="taglib指令"><a href="#taglib指令" class="headerlink" title="taglib指令"></a>taglib指令</h4><h3 id="7个动作指令"><a href="#7个动作指令" class="headerlink" title="7个动作指令"></a>7个动作指令</h3><h4 id="jsp-forward"><a href="#jsp-forward" class="headerlink" title="jsp:forward"></a>jsp:forward</h4><h4 id="jsp-param"><a href="#jsp-param" class="headerlink" title="jsp:param"></a>jsp:param</h4><h4 id="jsp-include"><a href="#jsp-include" class="headerlink" title="jsp:include"></a>jsp:include</h4><h4 id="jsp-plugin"><a href="#jsp-plugin" class="headerlink" title="jsp:plugin"></a>jsp:plugin</h4><h4 id="jsp-useBean"><a href="#jsp-useBean" class="headerlink" title="jsp:useBean"></a>jsp:useBean</h4><h4 id="jsp-setProperty"><a href="#jsp-setProperty" class="headerlink" title="jsp:setProperty"></a>jsp:setProperty</h4><h4 id="jsp-getProprtty"><a href="#jsp-getProprtty" class="headerlink" title="jsp:getProprtty"></a>jsp:getProprtty</h4><h3 id="9个内置对象"><a href="#9个内置对象" class="headerlink" title="9个内置对象"></a>9个内置对象</h3><h4 id="application"><a href="#application" class="headerlink" title="application"></a>application</h4><p>application是<code>javax.servlet.ServletContext</code>的实例，代表jsp所属的Web应用自身，用于jsp或者Servlet之间交换信息</p>
+<ol>
+<li><p>setAttribute(String attrName,Object value)方法：将一个值设置成application范围的属性，属性值对整个web应用有效</p>
+</li>
+<li><p>getAttribute(String attrName)方法：通过属性名获取一个application范围的属性值</p>
+</li>
+<li><p>获取web应用配置参数：使用application的getInitParameter(String paramName)获取web应用的配置参数，这些配置参数应该在web.xml文件中使用context-param元素配置，格式如下</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>参数名<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>参数值<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+<h4 id="config"><a href="#config" class="headerlink" title="config"></a>config</h4><p>config对象是<code>javax.servlet.ServletConfig</code>的实例，表示当前jsp文件的配置信息，通常jsp无需配置，所以该对象不常使用。但是在Servlet种用处较大，因为Servlet需要在web.xml文件中进行配置，可以用来指定配置参数</p>
+<ol>
+<li><p>getServletName()返回jsp对用的Servlet的名字，所有jsp的名字都相同，为jsp</p>
+</li>
+<li><p>getInitParameter(String paramName)方法用于获取jsp的配置参数，jsp参数在web.xml文件中配置格式如下</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Servlet名称<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">jsp-file</span>&gt;</span>jsp路径<span class="tag">&lt;/<span class="name">jsp-file</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">  		<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>参数名1<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">  		<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>参数值1<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>参数名2<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>参数值2<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+<h4 id="exception"><a href="#exception" class="headerlink" title="exception"></a>exception</h4><p>exception对象是Throwable的实例，代表jsp脚本中产生的错误和异常，是jsp页面异常机制的一部分，该对象仅在异常处理页面才有效</p>
+<h4 id="out"><a href="#out" class="headerlink" title="out"></a>out</h4><p>out对象代表一个页面输出流，通常用于在页面上输出变量值以及常量</p>
+<p>使用out的地方，都可以使用表达式<code>&lt;% %&gt;</code>来代替，显得更加简洁，表达式<code>&lt;% %&gt;</code>的本质就是out.write(…)</p>
+<h4 id="page"><a href="#page" class="headerlink" title="page"></a>page</h4><p>代表页面本身</p>
+<h4 id="pageContext"><a href="#pageContext" class="headerlink" title="pageContext"></a>pageContext</h4><p>该对象代表页面上下文，主要用于访问jsp之间的共享数据。使用pageContext可以访问page、request、response、application访问的变量</p>
+<h4 id="request"><a href="#request" class="headerlink" title="request"></a>request</h4><h4 id="response"><a href="#response" class="headerlink" title="response"></a>response</h4><h4 id="session"><a href="#session" class="headerlink" title="session"></a>session</h4>
       
     </div>
 
@@ -412,11 +388,7 @@ SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistr
       
         <div class="post-tags">
           
-            <a href="/tags/框架/" rel="tag">#框架</a>
-          
-            <a href="/tags/Java/" rel="tag">#Java</a>
-          
-            <a href="/tags/ORM/" rel="tag">#ORM</a>
+            <a href="/tags/web/" rel="tag">#web</a>
           
         </div>
       
@@ -425,17 +397,13 @@ SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistr
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/25/SpringMVC学习相关总结/" rel="next" title="SpringMVC学习相关总结">
-                <i class="fa fa-chevron-left"></i> SpringMVC学习相关总结
+              <a href="/2016/11/01/Linux下配置JavaWeb运行环境问题总结/" rel="next" title="Linux下配置JavaWeb运行环境问题总结">
+                <i class="fa fa-chevron-left"></i> Linux下配置JavaWeb运行环境问题总结
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/20/java算法基础之常用排序算法/" rel="prev" title="java算法基础之常用排序算法">
-                java算法基础之常用排序算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -556,7 +524,7 @@ SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistr
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hibernate学习相关总结和问题解决"><span class="nav-number">1.</span> <span class="nav-text">hibernate学习相关总结和问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hibernate不自动建表问题"><span class="nav-number">1.1.</span> <span class="nav-text">hibernate不自动建表问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件模板记录"><span class="nav-number">1.2.</span> <span class="nav-text">配置文件模板记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hibernate4获取SessionFactory的方式变化"><span class="nav-number">1.3.</span> <span class="nav-text">hibernate4获取SessionFactory的方式变化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaWeb基础知识点总结"><span class="nav-number">1.</span> <span class="nav-text">JavaWeb基础知识点总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP相关"><span class="nav-number">1.1.</span> <span class="nav-text">JSP相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4种基本语法"><span class="nav-number">1.1.1.</span> <span class="nav-text">4种基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP注释"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">JSP注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP声明"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">JSP声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出JSP表达式"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">输出JSP表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP脚本"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">JSP脚本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三种编译指令"><span class="nav-number">1.1.2.</span> <span class="nav-text">三种编译指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#page指令"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">page指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#include指令"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">include指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#taglib指令"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">taglib指令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7个动作指令"><span class="nav-number">1.1.3.</span> <span class="nav-text">7个动作指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-forward"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">jsp:forward</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-param"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">jsp:param</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-include"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">jsp:include</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-plugin"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">jsp:plugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-useBean"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">jsp:useBean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-setProperty"><span class="nav-number">1.1.3.6.</span> <span class="nav-text">jsp:setProperty</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-getProprtty"><span class="nav-number">1.1.3.7.</span> <span class="nav-text">jsp:getProprtty</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9个内置对象"><span class="nav-number">1.1.4.</span> <span class="nav-text">9个内置对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#application"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">application</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#config"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">config</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#exception"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">exception</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#out"><span class="nav-number">1.1.4.4.</span> <span class="nav-text">out</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#page"><span class="nav-number">1.1.4.5.</span> <span class="nav-text">page</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pageContext"><span class="nav-number">1.1.4.6.</span> <span class="nav-text">pageContext</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#request"><span class="nav-number">1.1.4.7.</span> <span class="nav-text">request</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#response"><span class="nav-number">1.1.4.8.</span> <span class="nav-text">response</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#session"><span class="nav-number">1.1.4.9.</span> <span class="nav-text">session</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

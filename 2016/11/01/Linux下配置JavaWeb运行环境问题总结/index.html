@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Linux," />
 
 
 
@@ -86,15 +86,25 @@
 
 
 
-<meta name="description" content="一边写一边玩">
-<meta property="og:type" content="website">
-<meta property="og:title" content="南北">
-<meta property="og:url" content="https://songjin1994.github.io/tags/Spring/index.html">
+<meta name="description" content="Linux下配置JavaWeb运行环境问题总结tomcat启动延迟甚至卡住 找到jdk1.x.x_xx/jre/lib/security/Java.security文件，在文件中找到securerandom.source这个设置项，将其改为：
+securerandom.source=file:/dev/./urandom
+
+linux或者部分unix系统提供随机数设备是/dev/random 和/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux下配置JavaWeb运行环境问题总结">
+<meta property="og:url" content="https://songjin1994.github.io/2016/11/01/Linux下配置JavaWeb运行环境问题总结/index.html">
 <meta property="og:site_name" content="南北">
-<meta property="og:description" content="一边写一边玩">
+<meta property="og:description" content="Linux下配置JavaWeb运行环境问题总结tomcat启动延迟甚至卡住 找到jdk1.x.x_xx/jre/lib/security/Java.security文件，在文件中找到securerandom.source这个设置项，将其改为：
+securerandom.source=file:/dev/./urandom
+
+linux或者部分unix系统提供随机数设备是/dev/random 和/">
+<meta property="og:updated_time" content="2016-11-03T17:20:32.976Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="南北">
-<meta name="twitter:description" content="一边写一边玩">
+<meta name="twitter:title" content="Linux下配置JavaWeb运行环境问题总结">
+<meta name="twitter:description" content="Linux下配置JavaWeb运行环境问题总结tomcat启动延迟甚至卡住 找到jdk1.x.x_xx/jre/lib/security/Java.security文件，在文件中找到securerandom.source这个设置项，将其改为：
+securerandom.source=file:/dev/./urandom
+
+linux或者部分unix系统提供随机数设备是/dev/random 和/">
 
 
 
@@ -115,10 +125,10 @@
 
 
 
-  <link rel="canonical" href="https://songjin1994.github.io/tags/Spring/"/>
+  <link rel="canonical" href="https://songjin1994.github.io/2016/11/01/Linux下配置JavaWeb运行环境问题总结/"/>
 
 
-  <title> 标签: Spring | 南北 </title>
+  <title> Linux下配置JavaWeb运行环境问题总结 | 南北 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -139,7 +149,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -260,102 +270,154 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Spring
-        <small>标签</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/10/19/Spring之AOP/" itemprop="url">
-              
-                <span itemprop="name">Spring之AOP</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-19T11:59:36+08:00"
-              content="2016-10-19" >
-          10-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/10/16/Spring装配bean的方案/" itemprop="url">
-              
-                <span itemprop="name">Spring装配bean的方案</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-16T12:03:53+08:00"
-              content="2016-10-16" >
-          10-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/10/10/Spring框架学习（入门篇）/" itemprop="url">
-              
-                <span itemprop="name">Spring框架学习（入门篇）</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-10T15:05:40+08:00"
-              content="2016-10-10" >
-          10-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </div>
 
   
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Linux下配置JavaWeb运行环境问题总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-01T11:04:38+08:00" content="2016-11-01">
+              2016-11-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Linux下配置JavaWeb运行环境问题总结"><a href="#Linux下配置JavaWeb运行环境问题总结" class="headerlink" title="Linux下配置JavaWeb运行环境问题总结"></a>Linux下配置JavaWeb运行环境问题总结</h1><h2 id="tomcat启动延迟甚至卡住"><a href="#tomcat启动延迟甚至卡住" class="headerlink" title="tomcat启动延迟甚至卡住"></a>tomcat启动延迟甚至卡住</h2><p> 找到jdk1.x.x_xx/jre/lib/security/<a href="http://lib.csdn.net/base/javaee" target="_blank" rel="external">Java</a>.security文件，在文件中找到securerandom.source这个设置项，将其改为：</p>
+<p>securerandom.source=file:/dev/./urandom</p>
+<blockquote>
+<p>linux或者部分unix系统提供随机数设备是/dev/random 和/dev/urandom ，两个有区别，urandom安全性没有random高，但random需要时间间隔生成随机数。jdk默认调用random。</p>
+</blockquote>
+<h2 id="使用vi编辑器方向键变ABCD且backspace无法使用"><a href="#使用vi编辑器方向键变ABCD且backspace无法使用" class="headerlink" title="使用vi编辑器方向键变ABCD且backspace无法使用"></a>使用vi编辑器方向键变ABCD且backspace无法使用</h2><h2 id="Java环境变量的问题"><a href="#Java环境变量的问题" class="headerlink" title="Java环境变量的问题"></a>Java环境变量的问题</h2><h2 id="配置163软件源"><a href="#配置163软件源" class="headerlink" title="配置163软件源"></a>配置163软件源</h2><p>修改/etc/apt/sources.list文件内容如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.163.com/debian/ jessie main non-free contrib</div><div class="line">deb http://mirrors.163.com/debian/ jessie-updates main non-free contrib</div><div class="line">deb http://mirrors.163.com/debian/ jessie-backports main non-free contrib</div><div class="line">deb-src http://mirrors.163.com/debian/ jessie main non-free contrib</div><div class="line">deb-src http://mirrors.163.com/debian/ jessie-updates main non-free contrib</div><div class="line">deb-src http://mirrors.163.com/debian/ jessie-backports main non-free contrib</div><div class="line">deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib</div><div class="line">deb-src http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib</div></pre></td></tr></table></figure>
+<p>然后执行apt update命令即可修改软件源</p>
+<h2 id="安装最新版docker的命令"><a href="#安装最新版docker的命令" class="headerlink" title="安装最新版docker的命令"></a>安装最新版docker的命令</h2><p>直接使用<code>apt-get install docker</code>命令获取的docker版本较低，可以通过以下方式获取新版的docker</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crul</div></pre></td></tr></table></figure>
+<h2 id="docker常用命令汇总"><a href="#docker常用命令汇总" class="headerlink" title="docker常用命令汇总"></a>docker常用命令汇总</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/23/docker简单使用/" rel="next" title="docker简单使用">
+                <i class="fa fa-chevron-left"></i> docker简单使用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/07/JavaWeb基础知识点总结/" rel="prev" title="JavaWeb基础知识点总结">
+                JavaWeb基础知识点总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -363,6 +425,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -382,8 +448,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -440,6 +515,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux下配置JavaWeb运行环境问题总结"><span class="nav-number">1.</span> <span class="nav-text">Linux下配置JavaWeb运行环境问题总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tomcat启动延迟甚至卡住"><span class="nav-number">1.1.</span> <span class="nav-text">tomcat启动延迟甚至卡住</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用vi编辑器方向键变ABCD且backspace无法使用"><span class="nav-number">1.2.</span> <span class="nav-text">使用vi编辑器方向键变ABCD且backspace无法使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java环境变量的问题"><span class="nav-number">1.3.</span> <span class="nav-text">Java环境变量的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置163软件源"><span class="nav-number">1.4.</span> <span class="nav-text">配置163软件源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装最新版docker的命令"><span class="nav-number">1.5.</span> <span class="nav-text">安装最新版docker的命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker常用命令汇总"><span class="nav-number">1.6.</span> <span class="nav-text">docker常用命令汇总</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -543,6 +629,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 

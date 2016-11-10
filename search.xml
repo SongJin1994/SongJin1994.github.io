@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title><![CDATA[Linux相关]]></title>
+      <url>https://songjin1994.github.io/2016/11/10/Linux%E7%9B%B8%E5%85%B3/</url>
+      <content type="html"><![CDATA[<h1 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h1><h2 id="配置Apache-HTTP服务器"><a href="#配置Apache-HTTP服务器" class="headerlink" title="配置Apache HTTP服务器"></a>配置Apache HTTP服务器</h2><h3 id="安装和配置"><a href="#安装和配置" class="headerlink" title="安装和配置"></a>安装和配置</h3><p>使用系统：debian8.3</p>
+<p>直接使用aptitude命令安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">aptitude install apache2</div></pre></td></tr></table></figure>
+<p>启动、停止、重启相关命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="莫名其妙的中文路径乱码问题"><a href="#莫名其妙的中文路径乱码问题" class="headerlink" title="莫名其妙的中文路径乱码问题"></a>莫名其妙的中文路径乱码问题</h3><p>经过排查，是从windows中拷贝到Linux环境时，文件夹名和文件名的编码问题引起的，在windows中，中文默认编码使用的是GBK编码，而在Linux中，使用的是UTF-8编码。所以在文件拷贝之后，实际上在Linux中是乱码的形式，需要对文件夹名和文件名进行转码。使用的方式是convmv命令方式。</p>
+<p>通过aptitude命令下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">aptitude install convmv</div></pre></td></tr></table></figure>
+<p>aptitude使用方式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">convmv -f 源编码 -t 新编码 [选项] 文件名</div></pre></td></tr></table></figure>
+<p>常用参数：</p>
+<ul>
+<li>-r 递归处理子文件夹</li>
+<li>–notest 真正进行操作，请注意在默认情况下是不对文件进行真实操作的，而只是试验。</li>
+<li>–list 显示所有支持的编码</li>
+<li>–unescap 可以做一下转义，比如把%20变成空格</li>
+</ul>
+<p>比如我们有一个utf8编码的文件名，转换成GBK编码，命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">convmv -f UTF-8 -t GBK –notest 文件名</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[JavaWeb基础知识点总结]]></title>
       <url>https://songjin1994.github.io/2016/11/07/JavaWeb%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</url>
       <content type="html"><![CDATA[<h1 id="JavaWeb基础知识点总结"><a href="#JavaWeb基础知识点总结" class="headerlink" title="JavaWeb基础知识点总结"></a>JavaWeb基础知识点总结</h1><h2 id="JSP相关"><a href="#JSP相关" class="headerlink" title="JSP相关"></a>JSP相关</h2><h3 id="4种基本语法"><a href="#4种基本语法" class="headerlink" title="4种基本语法"></a>4种基本语法</h3><h4 id="JSP注释"><a href="#JSP注释" class="headerlink" title="JSP注释"></a>JSP注释</h4><h4 id="JSP声明"><a href="#JSP声明" class="headerlink" title="JSP声明"></a>JSP声明</h4><h4 id="输出JSP表达式"><a href="#输出JSP表达式" class="headerlink" title="输出JSP表达式"></a>输出JSP表达式</h4><h4 id="JSP脚本"><a href="#JSP脚本" class="headerlink" title="JSP脚本"></a>JSP脚本</h4><h3 id="三种编译指令"><a href="#三种编译指令" class="headerlink" title="三种编译指令"></a>三种编译指令</h3><h4 id="page指令"><a href="#page指令" class="headerlink" title="page指令"></a>page指令</h4><h4 id="include指令"><a href="#include指令" class="headerlink" title="include指令"></a>include指令</h4><h4 id="taglib指令"><a href="#taglib指令" class="headerlink" title="taglib指令"></a>taglib指令</h4><h3 id="7个动作指令"><a href="#7个动作指令" class="headerlink" title="7个动作指令"></a>7个动作指令</h3><h4 id="jsp-forward"><a href="#jsp-forward" class="headerlink" title="jsp:forward"></a>jsp:forward</h4><h4 id="jsp-param"><a href="#jsp-param" class="headerlink" title="jsp:param"></a>jsp:param</h4><h4 id="jsp-include"><a href="#jsp-include" class="headerlink" title="jsp:include"></a>jsp:include</h4><h4 id="jsp-plugin"><a href="#jsp-plugin" class="headerlink" title="jsp:plugin"></a>jsp:plugin</h4><h4 id="jsp-useBean"><a href="#jsp-useBean" class="headerlink" title="jsp:useBean"></a>jsp:useBean</h4><h4 id="jsp-setProperty"><a href="#jsp-setProperty" class="headerlink" title="jsp:setProperty"></a>jsp:setProperty</h4><h4 id="jsp-getProprtty"><a href="#jsp-getProprtty" class="headerlink" title="jsp:getProprtty"></a>jsp:getProprtty</h4><h3 id="9个内置对象"><a href="#9个内置对象" class="headerlink" title="9个内置对象"></a>9个内置对象</h3><h4 id="application"><a href="#application" class="headerlink" title="application"></a>application</h4><p>application是<code>javax.servlet.ServletContext</code>的实例，代表jsp所属的Web应用自身，用于jsp或者Servlet之间交换信息</p>

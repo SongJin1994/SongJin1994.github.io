@@ -86,31 +86,19 @@
 
 
 
-<meta name="description" content="Linux相关配置Apache HTTP服务器安装和配置使用系统：debian8.3
-直接使用aptitude命令安装
-1aptitude install apache2
-启动、停止、重启相关命令
-12
-莫名其妙的中文路径乱码问题经过排查，是从windows中拷贝到Linux环境时，文件夹名和文件名的编码问题引起的，在windows中，中文默认编码使用的是GBK编码，而在Linux中，使用的是UT">
+<meta name="description" content="Linux相关配置163软件源修改/etc/apt/sources.list文件内容如下所示：
+12345678deb http://mirrors.163.com/debian/ jessie main non-free contribdeb http://mirrors.163.com/debian/ jessie-updates main non-free contribdeb http:/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux相关">
 <meta property="og:url" content="https://songjin1994.github.io/2016/11/10/Linux相关/index.html">
 <meta property="og:site_name" content="南北">
-<meta property="og:description" content="Linux相关配置Apache HTTP服务器安装和配置使用系统：debian8.3
-直接使用aptitude命令安装
-1aptitude install apache2
-启动、停止、重启相关命令
-12
-莫名其妙的中文路径乱码问题经过排查，是从windows中拷贝到Linux环境时，文件夹名和文件名的编码问题引起的，在windows中，中文默认编码使用的是GBK编码，而在Linux中，使用的是UT">
-<meta property="og:updated_time" content="2016-11-10T16:44:44.334Z">
+<meta property="og:description" content="Linux相关配置163软件源修改/etc/apt/sources.list文件内容如下所示：
+12345678deb http://mirrors.163.com/debian/ jessie main non-free contribdeb http://mirrors.163.com/debian/ jessie-updates main non-free contribdeb http:/">
+<meta property="og:updated_time" content="2016-11-13T14:52:59.143Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux相关">
-<meta name="twitter:description" content="Linux相关配置Apache HTTP服务器安装和配置使用系统：debian8.3
-直接使用aptitude命令安装
-1aptitude install apache2
-启动、停止、重启相关命令
-12
-莫名其妙的中文路径乱码问题经过排查，是从windows中拷贝到Linux环境时，文件夹名和文件名的编码问题引起的，在windows中，中文默认编码使用的是GBK编码，而在Linux中，使用的是UT">
+<meta name="twitter:description" content="Linux相关配置163软件源修改/etc/apt/sources.list文件内容如下所示：
+12345678deb http://mirrors.163.com/debian/ jessie main non-free contribdeb http://mirrors.163.com/debian/ jessie-updates main non-free contribdeb http:/">
 
 
 
@@ -356,26 +344,10 @@
       
 
       
-        <h1 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h1><h2 id="配置Apache-HTTP服务器"><a href="#配置Apache-HTTP服务器" class="headerlink" title="配置Apache HTTP服务器"></a>配置Apache HTTP服务器</h2><h3 id="安装和配置"><a href="#安装和配置" class="headerlink" title="安装和配置"></a>安装和配置</h3><p>使用系统：debian8.3</p>
-<p>直接使用aptitude命令安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">aptitude install apache2</div></pre></td></tr></table></figure>
-<p>启动、停止、重启相关命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<h3 id="莫名其妙的中文路径乱码问题"><a href="#莫名其妙的中文路径乱码问题" class="headerlink" title="莫名其妙的中文路径乱码问题"></a>莫名其妙的中文路径乱码问题</h3><p>经过排查，是从windows中拷贝到Linux环境时，文件夹名和文件名的编码问题引起的，在windows中，中文默认编码使用的是GBK编码，而在Linux中，使用的是UTF-8编码。所以在文件拷贝之后，实际上在Linux中是乱码的形式，需要对文件夹名和文件名进行转码。使用的方式是convmv命令方式。</p>
-<p>通过aptitude命令下载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">aptitude install convmv</div></pre></td></tr></table></figure>
-<p>aptitude使用方式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">convmv -f 源编码 -t 新编码 [选项] 文件名</div></pre></td></tr></table></figure>
-<p>常用参数：</p>
-<ul>
-<li>-r 递归处理子文件夹</li>
-<li>–notest 真正进行操作，请注意在默认情况下是不对文件进行真实操作的，而只是试验。</li>
-<li>–list 显示所有支持的编码</li>
-<li>–unescap 可以做一下转义，比如把%20变成空格</li>
-</ul>
-<p>比如我们有一个utf8编码的文件名，转换成GBK编码，命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">convmv -f UTF-8 -t GBK –notest 文件名</div></pre></td></tr></table></figure>
-
+        <h1 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h1><h2 id="配置163软件源"><a href="#配置163软件源" class="headerlink" title="配置163软件源"></a>配置163软件源</h2><p>修改/etc/apt/sources.list文件内容如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.163.com/debian/ jessie main non-free contrib</div><div class="line">deb http://mirrors.163.com/debian/ jessie-updates main non-free contrib</div><div class="line">deb http://mirrors.163.com/debian/ jessie-backports main non-free contrib</div><div class="line">deb-src http://mirrors.163.com/debian/ jessie main non-free contrib</div><div class="line">deb-src http://mirrors.163.com/debian/ jessie-updates main non-free contrib</div><div class="line">deb-src http://mirrors.163.com/debian/ jessie-backports main non-free contrib</div><div class="line">deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib</div><div class="line">deb-src http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib</div></pre></td></tr></table></figure>
+<p>然后执行apt update命令即可修改软件源</p>
+<h2 id="使用vi编辑器方向键变ABCD且backspace无法使用"><a href="#使用vi编辑器方向键变ABCD且backspace无法使用" class="headerlink" title="使用vi编辑器方向键变ABCD且backspace无法使用"></a>使用vi编辑器方向键变ABCD且backspace无法使用</h2>
       
     </div>
 
@@ -533,7 +505,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux相关"><span class="nav-number">1.</span> <span class="nav-text">Linux相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Apache-HTTP服务器"><span class="nav-number">1.1.</span> <span class="nav-text">配置Apache HTTP服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装和配置"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装和配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#莫名其妙的中文路径乱码问题"><span class="nav-number">1.1.2.</span> <span class="nav-text">莫名其妙的中文路径乱码问题</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux相关"><span class="nav-number">1.</span> <span class="nav-text">Linux相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置163软件源"><span class="nav-number">1.1.</span> <span class="nav-text">配置163软件源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用vi编辑器方向键变ABCD且backspace无法使用"><span class="nav-number">1.2.</span> <span class="nav-text">使用vi编辑器方向键变ABCD且backspace无法使用</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

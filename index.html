@@ -347,12 +347,8 @@
       
         
           
-          Linux相关配置Apache HTTP服务器安装和配置使用系统：debian8.3
-直接使用aptitude命令安装
-1aptitude install apache2
-启动、停止、重启相关命令
-12
-莫名其妙的中文路径乱码问题经过排查，是从windows中拷贝到Linux环境时，文件夹名和文件名
+          Linux相关配置163软件源修改/etc/apt/sources.list文件内容如下所示：
+12345678deb http://mirrors.163.com/debian/ jessie main non-free contribdeb http://mirrors.163.com/debi
           ...
 
           <div class="post-more-link text-center">
@@ -525,7 +521,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/01/Linux下配置JavaWeb运行环境问题总结/" itemprop="url">
+                <a class="post-title-link" href="/2016/11/01/Linux下配置JavaWeb问题总结/" itemprop="url">
                   Linux下配置JavaWeb运行环境问题总结
                 </a>
               
@@ -588,12 +584,16 @@
       
         
           
-          Linux下配置JavaWeb运行环境问题总结tomcat启动延迟甚至卡住 找到jdk1.x.x_xx/jre/lib/security/Java.security文件，在文件中找到securerandom.source这个设置项，将其改为：
-securerandom.source=file:/de
+          Linux下配置JavaWeb问题总结配置Apache HTTP服务器安装和配置使用系统：debian8.3
+直接使用aptitude命令安装
+1aptitude install apache2
+启动、停止、重启相关命令
+12
+配置二级域名有时候需要创建二级域名并绑定到新的网站上，此时就需要在云解析
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/11/01/Linux下配置JavaWeb运行环境问题总结/#more" rel="contents">
+            <a class="btn" href="/2016/11/01/Linux下配置JavaWeb问题总结/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1103,7 +1103,7 @@ AOP 的实现方法大致分为两类
             
               
                 
-                <a class="post-title-link" href="/2016/10/12/第一个python程序/" itemprop="url">
+                <a class="post-title-link" href="/2016/10/12/FirstPython/" itemprop="url">
                   第一个python程序
                 </a>
               
@@ -1175,7 +1175,7 @@ AOP 的实现方法大致分为两类
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/12/第一个python程序/#more" rel="contents">
+            <a class="btn" href="/2016/10/12/FirstPython/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

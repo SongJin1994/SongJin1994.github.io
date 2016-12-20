@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="web," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="JavaWeb基础知识点总结JSP相关4种基本语法JSP注释JSP声明输出JSP表达式JSP脚本三种编译指令page指令include指令taglib指令7个动作指令jsp:forwardjsp:paramjsp:includejsp:pluginjsp:useBeanjsp:setPropertyjsp:getProprtty9个内置对象applicationapplication是javax.">
+<meta name="description" content="oracle数据库日常使用总结decode函数的使用使用规则：decode(条件,值1,返回值1,值2,返回值2,…值n,返回值n,缺省值)
+方法原理：12345678910IF 条件=值1 THEN　　　　RETURN(翻译值1)ELSIF 条件=值2 THEN　　　　RETURN(翻译值2)　　　　......ELSIF 条件=值n THEN　　　　RETURN(翻译值n)ELSE　　　　RE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaWeb基础知识点总结">
-<meta property="og:url" content="https://songjin1994.github.io/2016/11/07/JavaWeb基础知识点总结/index.html">
+<meta property="og:title" content="南北">
+<meta property="og:url" content="https://songjin1994.github.io/2016/12/08/oracle数据库日常使用总结/index.html">
 <meta property="og:site_name" content="南北">
-<meta property="og:description" content="JavaWeb基础知识点总结JSP相关4种基本语法JSP注释JSP声明输出JSP表达式JSP脚本三种编译指令page指令include指令taglib指令7个动作指令jsp:forwardjsp:paramjsp:includejsp:pluginjsp:useBeanjsp:setPropertyjsp:getProprtty9个内置对象applicationapplication是javax.">
-<meta property="og:updated_time" content="2016-11-07T10:07:30.548Z">
+<meta property="og:description" content="oracle数据库日常使用总结decode函数的使用使用规则：decode(条件,值1,返回值1,值2,返回值2,…值n,返回值n,缺省值)
+方法原理：12345678910IF 条件=值1 THEN　　　　RETURN(翻译值1)ELSIF 条件=值2 THEN　　　　RETURN(翻译值2)　　　　......ELSIF 条件=值n THEN　　　　RETURN(翻译值n)ELSE　　　　RE">
+<meta property="og:updated_time" content="2016-12-08T06:01:47.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaWeb基础知识点总结">
-<meta name="twitter:description" content="JavaWeb基础知识点总结JSP相关4种基本语法JSP注释JSP声明输出JSP表达式JSP脚本三种编译指令page指令include指令taglib指令7个动作指令jsp:forwardjsp:paramjsp:includejsp:pluginjsp:useBeanjsp:setPropertyjsp:getProprtty9个内置对象applicationapplication是javax.">
+<meta name="twitter:title" content="南北">
+<meta name="twitter:description" content="oracle数据库日常使用总结decode函数的使用使用规则：decode(条件,值1,返回值1,值2,返回值2,…值n,返回值n,缺省值)
+方法原理：12345678910IF 条件=值1 THEN　　　　RETURN(翻译值1)ELSIF 条件=值2 THEN　　　　RETURN(翻译值2)　　　　......ELSIF 条件=值n THEN　　　　RETURN(翻译值n)ELSE　　　　RE">
 
 
 
@@ -121,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://songjin1994.github.io/2016/11/07/JavaWeb基础知识点总结/"/>
+  <link rel="canonical" href="https://songjin1994.github.io/2016/12/08/oracle数据库日常使用总结/"/>
 
 
 
 
 
-  <title> JavaWeb基础知识点总结 | 南北 </title>
+  <title>  | 南北 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -281,7 +284,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://songjin1994.github.io/2016/11/07/JavaWeb基础知识点总结/">
+  <link itemprop="mainEntityOfPage" href="https://songjin1994.github.io/2016/12/08/oracle数据库日常使用总结/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Song">
@@ -305,7 +308,7 @@
             
             
               
-                JavaWeb基础知识点总结
+                
               
             
           </h1>
@@ -317,8 +320,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-07T15:04:36+08:00">
-              2016-11-07
+            <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-08T14:02:06+08:00">
+              2016-12-08
             </time>
 
             &nbsp;|&nbsp;
@@ -326,31 +329,12 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-11-07T18:07:30+08:00">
-              2016-11-07
+            <time title="Post modified" itemprop="dateModified" datetime="2016-12-08T14:01:47+08:00">
+              2016-12-08
             </time>
             
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaweb/" itemprop="url" rel="index">
-                    <span itemprop="name">javaweb</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -377,32 +361,29 @@
       
 
       
-        <h1 id="JavaWeb基础知识点总结"><a href="#JavaWeb基础知识点总结" class="headerlink" title="JavaWeb基础知识点总结"></a>JavaWeb基础知识点总结</h1><h2 id="JSP相关"><a href="#JSP相关" class="headerlink" title="JSP相关"></a>JSP相关</h2><h3 id="4种基本语法"><a href="#4种基本语法" class="headerlink" title="4种基本语法"></a>4种基本语法</h3><h4 id="JSP注释"><a href="#JSP注释" class="headerlink" title="JSP注释"></a>JSP注释</h4><h4 id="JSP声明"><a href="#JSP声明" class="headerlink" title="JSP声明"></a>JSP声明</h4><h4 id="输出JSP表达式"><a href="#输出JSP表达式" class="headerlink" title="输出JSP表达式"></a>输出JSP表达式</h4><h4 id="JSP脚本"><a href="#JSP脚本" class="headerlink" title="JSP脚本"></a>JSP脚本</h4><h3 id="三种编译指令"><a href="#三种编译指令" class="headerlink" title="三种编译指令"></a>三种编译指令</h3><h4 id="page指令"><a href="#page指令" class="headerlink" title="page指令"></a>page指令</h4><h4 id="include指令"><a href="#include指令" class="headerlink" title="include指令"></a>include指令</h4><h4 id="taglib指令"><a href="#taglib指令" class="headerlink" title="taglib指令"></a>taglib指令</h4><h3 id="7个动作指令"><a href="#7个动作指令" class="headerlink" title="7个动作指令"></a>7个动作指令</h3><h4 id="jsp-forward"><a href="#jsp-forward" class="headerlink" title="jsp:forward"></a>jsp:forward</h4><h4 id="jsp-param"><a href="#jsp-param" class="headerlink" title="jsp:param"></a>jsp:param</h4><h4 id="jsp-include"><a href="#jsp-include" class="headerlink" title="jsp:include"></a>jsp:include</h4><h4 id="jsp-plugin"><a href="#jsp-plugin" class="headerlink" title="jsp:plugin"></a>jsp:plugin</h4><h4 id="jsp-useBean"><a href="#jsp-useBean" class="headerlink" title="jsp:useBean"></a>jsp:useBean</h4><h4 id="jsp-setProperty"><a href="#jsp-setProperty" class="headerlink" title="jsp:setProperty"></a>jsp:setProperty</h4><h4 id="jsp-getProprtty"><a href="#jsp-getProprtty" class="headerlink" title="jsp:getProprtty"></a>jsp:getProprtty</h4><h3 id="9个内置对象"><a href="#9个内置对象" class="headerlink" title="9个内置对象"></a>9个内置对象</h3><h4 id="application"><a href="#application" class="headerlink" title="application"></a>application</h4><p>application是<code>javax.servlet.ServletContext</code>的实例，代表jsp所属的Web应用自身，用于jsp或者Servlet之间交换信息</p>
+        <h2 id="oracle数据库日常使用总结"><a href="#oracle数据库日常使用总结" class="headerlink" title="oracle数据库日常使用总结"></a>oracle数据库日常使用总结</h2><h3 id="decode函数的使用"><a href="#decode函数的使用" class="headerlink" title="decode函数的使用"></a>decode函数的使用</h3><p><strong>使用规则：</strong>decode(条件,值1,返回值1,值2,返回值2,…值n,返回值n,缺省值)</p>
+<p><strong>方法原理：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">IF 条件=值<span class="number">1</span> <span class="function">THEN</span></div><div class="line">　　　　<span class="title">RETURN</span><span class="params">(翻译值<span class="number">1</span>)</span></div><div class="line">ELSIF 条件=值<span class="number">2</span> <span class="function">THEN</span></div><div class="line">　　　　<span class="title">RETURN</span><span class="params">(翻译值<span class="number">2</span>)</span></div><div class="line">　　　　......</div><div class="line">ELSIF 条件=值<span class="function">n THEN</span></div><div class="line">　　　　<span class="title">RETURN</span><span class="params">(翻译值n)</span></div><div class="line">ELSE</div><div class="line">　　　　<span class="title">RETURN</span><span class="params">(缺省值)</span></div><div class="line">END IF</div></pre></td></tr></table></figure></p>
+<p>Decode函数与一系列嵌套的 IF-THEN-ELSE语句相似。但是使用更加便捷简单。开发中主要可用于：</p>
+<p><strong>1. 对不同取值的数据进行计数</strong></p>
+<p>在统计策略项目的成功和失败情况时，直接使用Count函数无法完成分别统计成功和失败的次数。此时可以使用sum函数和decode函数结合，例如<code>SUM (DECODE(H.SERVICE_STATUS,&#39;1&#39;,1，0)) AS SUCCESS</code>，若H.SERVICE_STATUS为’1’（其中’1’表示成功），则返回数字1，通过sum函数进行求和，即可求得所有SERVICE_STATUS为’1’的次数</p>
+<p><strong>2. 将当前值翻译为其他值</strong></p>
+<p>由上例已经可以看出，在使用<code>DECODE(H.SERVICE_STATUS,&#39;1&#39;,1，0)</code>时，将字符型的1翻译为了数字1，使其可以进行求和操作</p>
+<h3 id="字符串拼接操作"><a href="#字符串拼接操作" class="headerlink" title="字符串拼接操作"></a>字符串拼接操作</h3><h4 id="同一条数据中不同列的字符串之间进行拼接操作"><a href="#同一条数据中不同列的字符串之间进行拼接操作" class="headerlink" title="同一条数据中不同列的字符串之间进行拼接操作"></a>同一条数据中不同列的字符串之间进行拼接操作</h4><p>oracle中可以使用<code>||</code>和<code>CONCAT</code>两种方式进行字符串拼接</p>
+<p> <strong>使用<code>||</code>方式：</strong><code>&#39;字符串1&#39; || &#39;字符串2&#39; || &#39;字符串3&#39; || &#39;字符串4&#39;</code></p>
+<p><strong><em>注意：这种方式进适用于oracle数据库，在MySQL或其他数据库中不能采用这种方式</em></strong></p>
+<p> <strong>使用<code>CONCAT</code>方式：</strong><code>SELECT CONCAT(&#39;字符串1&#39;,&#39;字符串2&#39;) FROM TableName</code></p>
+<p><strong><em>注意：CONCAT()在oracle中只能拼接两个字符串，如果需要拼接多个字符串，可采用多个CONCAT()嵌套拼接多个字符串。但在MySQL中，CONCAT()函数是可以同时拼接多个字符串的，用法如下</em></strong></p>
+<pre><code>`SELECT CONCAT(&apos;字符串1&apos;,&apos;字符串2&apos;,&apos;字符串3&apos;,&apos;字符串4&apos;) FROM TableName`
+</code></pre><h4 id="字符串聚合拼接操作"><a href="#字符串聚合拼接操作" class="headerlink" title="字符串聚合拼接操作"></a>字符串聚合拼接操作</h4><p>常用的有</p>
 <ol>
-<li><p>setAttribute(String attrName,Object value)方法：将一个值设置成application范围的属性，属性值对整个web应用有效</p>
-</li>
-<li><p>getAttribute(String attrName)方法：通过属性名获取一个application范围的属性值</p>
-</li>
-<li><p>获取web应用配置参数：使用application的getInitParameter(String paramName)获取web应用的配置参数，这些配置参数应该在web.xml文件中使用context-param元素配置，格式如下</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>参数名<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>参数值<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>​</p>
+<li>WMSYS.WM_CONCAT （从oracle 10G开始支持）</li>
+<li>LISTAGG(measure_expr,delimiter) WITHIN GROUP(order_by_clause) OVER(query_partition_clause) （从oracle 11G R2开始支持）</li>
+<li>SYS_CONNECT_BY_PATH （从oracle 9i开始支持）<h5 id="WMSYS-WM-CONCAT用法"><a href="#WMSYS-WM-CONCAT用法" class="headerlink" title="WMSYS.WM_CONCAT用法"></a>WMSYS.WM_CONCAT用法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select wmsys.wm_concat(colname1) </div><div class="line">from TableName</div><div class="line">group by colname2;</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="config"><a href="#config" class="headerlink" title="config"></a>config</h4><p>config对象是<code>javax.servlet.ServletConfig</code>的实例，表示当前jsp文件的配置信息，通常jsp无需配置，所以该对象不常使用。但是在Servlet种用处较大，因为Servlet需要在web.xml文件中进行配置，可以用来指定配置参数</p>
-<ol>
-<li><p>getServletName()返回jsp对用的Servlet的名字，所有jsp的名字都相同，为jsp</p>
-</li>
-<li><p>getInitParameter(String paramName)方法用于获取jsp的配置参数，jsp参数在web.xml文件中配置格式如下</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Servlet名称<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">jsp-file</span>&gt;</span>jsp路径<span class="tag">&lt;/<span class="name">jsp-file</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">  		<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>参数名1<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">  		<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>参数值1<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>参数名2<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>参数值2<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-</ol>
-<h4 id="exception"><a href="#exception" class="headerlink" title="exception"></a>exception</h4><p>exception对象是Throwable的实例，代表jsp脚本中产生的错误和异常，是jsp页面异常机制的一部分，该对象仅在异常处理页面才有效</p>
-<h4 id="out"><a href="#out" class="headerlink" title="out"></a>out</h4><p>out对象代表一个页面输出流，通常用于在页面上输出变量值以及常量</p>
-<p>使用out的地方，都可以使用表达式<code>&lt;% %&gt;</code>来代替，显得更加简洁，表达式<code>&lt;% %&gt;</code>的本质就是out.write(…)</p>
-<h4 id="page"><a href="#page" class="headerlink" title="page"></a>page</h4><p>代表页面本身</p>
-<h4 id="pageContext"><a href="#pageContext" class="headerlink" title="pageContext"></a>pageContext</h4><p>该对象代表页面上下文，主要用于访问jsp之间的共享数据。使用pageContext可以访问page、request、response、application访问的变量</p>
-<h4 id="request"><a href="#request" class="headerlink" title="request"></a>request</h4><h4 id="response"><a href="#response" class="headerlink" title="response"></a>response</h4><h4 id="session"><a href="#session" class="headerlink" title="session"></a>session</h4>
+<p>默认分隔符为逗号<code>,</code>如果想替换为其他分隔符，可采用如下方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select replace(wmsys.wm_concat(colname1),&apos;,&apos;,&apos;、&apos;) </div><div class="line">from TableName</div><div class="line">group by colname2;</div></pre></td></tr></table></figure></p>
+<p>其余两种情况后续补充</p>
+
       
     </div>
 
@@ -423,19 +404,13 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/web/" rel="tag"># web</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/01/Linux下配置JavaWeb问题总结/" rel="next" title="Linux下配置JavaWeb运行环境问题总结">
-                <i class="fa fa-chevron-left"></i> Linux下配置JavaWeb运行环境问题总结
+              <a href="/2016/12/07/Spring之JDBC/" rel="next" title="Spring之JDBC">
+                <i class="fa fa-chevron-left"></i> Spring之JDBC
               </a>
             
           </div>
@@ -444,8 +419,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/10/Linux相关/" rel="prev" title="Linux相关">
-                Linux相关 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/08/Extjs框架总结/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -566,7 +541,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaWeb基础知识点总结"><span class="nav-number">1.</span> <span class="nav-text">JavaWeb基础知识点总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP相关"><span class="nav-number">1.1.</span> <span class="nav-text">JSP相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4种基本语法"><span class="nav-number">1.1.1.</span> <span class="nav-text">4种基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP注释"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">JSP注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP声明"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">JSP声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出JSP表达式"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">输出JSP表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP脚本"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">JSP脚本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三种编译指令"><span class="nav-number">1.1.2.</span> <span class="nav-text">三种编译指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#page指令"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">page指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#include指令"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">include指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#taglib指令"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">taglib指令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7个动作指令"><span class="nav-number">1.1.3.</span> <span class="nav-text">7个动作指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-forward"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">jsp:forward</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-param"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">jsp:param</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-include"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">jsp:include</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-plugin"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">jsp:plugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-useBean"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">jsp:useBean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-setProperty"><span class="nav-number">1.1.3.6.</span> <span class="nav-text">jsp:setProperty</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jsp-getProprtty"><span class="nav-number">1.1.3.7.</span> <span class="nav-text">jsp:getProprtty</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9个内置对象"><span class="nav-number">1.1.4.</span> <span class="nav-text">9个内置对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#application"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">application</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#config"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">config</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#exception"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">exception</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#out"><span class="nav-number">1.1.4.4.</span> <span class="nav-text">out</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#page"><span class="nav-number">1.1.4.5.</span> <span class="nav-text">page</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pageContext"><span class="nav-number">1.1.4.6.</span> <span class="nav-text">pageContext</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#request"><span class="nav-number">1.1.4.7.</span> <span class="nav-text">request</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#response"><span class="nav-number">1.1.4.8.</span> <span class="nav-text">response</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#session"><span class="nav-number">1.1.4.9.</span> <span class="nav-text">session</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#oracle数据库日常使用总结"><span class="nav-number">1.</span> <span class="nav-text">oracle数据库日常使用总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#decode函数的使用"><span class="nav-number">1.1.</span> <span class="nav-text">decode函数的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串拼接操作"><span class="nav-number">1.2.</span> <span class="nav-text">字符串拼接操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同一条数据中不同列的字符串之间进行拼接操作"><span class="nav-number">1.2.1.</span> <span class="nav-text">同一条数据中不同列的字符串之间进行拼接操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串聚合拼接操作"><span class="nav-number">1.2.2.</span> <span class="nav-text">字符串聚合拼接操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#WMSYS-WM-CONCAT用法"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">WMSYS.WM_CONCAT用法</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
